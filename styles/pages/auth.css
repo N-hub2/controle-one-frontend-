@@ -1,0 +1,14 @@
+.page-login,
+.page-register {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+}
+
+.auth-box {
+  width: min(520px, 94%);
+}
+
+.auth-box h1 {
+  margin-bottom: 1rem;
+}

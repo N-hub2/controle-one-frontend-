@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking - Controle One</title>
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <main class="page page-booking container">
+    <h1>Book your appointment</h1>
+
+    <article class="card">
+      <h2>Selected center</h2>
+      <p id="selected-center">No center selected</p>
+    </article>
+
+    <form id="booking-form" class="card booking-form" novalidate>
+      <div class="form-field">
+        <label for="booking-date">Date</label>
+        <input id="booking-date" class="input-control" type="date" required>
+      </div>
+      <button type="submit" class="button primary-button">Confirm booking</button>
+    </form>
+  </main>
+
+  <script src="../scripts/main.js" defer></script>
+</body>
+</html>

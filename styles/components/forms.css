@@ -1,0 +1,18 @@
+.form-field {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.input-control {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.75rem;
+  background: var(--color-white);
+}
+
+.input-control:focus {
+  outline: 2px solid #bfdbfe;
+  border-color: var(--color-primary);
+}

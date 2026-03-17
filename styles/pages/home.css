@@ -1,0 +1,77 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.top-nav a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.hero-section,
+.search-section,
+.features-section,
+.stats-section,
+.blog-section,
+.app-section,
+.contact-section {
+  padding: 3rem 0;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero-kicker {
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.section-title {
+  margin-bottom: 1rem;
+}
+
+.search-form,
+.contact-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.feature-grid,
+.stats-grid,
+.blog-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.app-card {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+}

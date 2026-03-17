@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle One - Réservez votre contrôle technique</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <h1 class="brand">Controle One</h1>
+      <nav class="top-nav" aria-label="Navigation principale">
+        <a href="#features">Fonctionnalités</a>
+        <a href="#stats">Statistiques</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+        <a href="pages/login.html" class="button">Connexion</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <div class="container hero-content">
+        <p class="hero-kicker">Plateforme nationale</p>
+        <h2>Réservez votre contrôle technique en quelques clics</h2>
+        <p>Trouvez un centre agréé en France, comparez les disponibilités et confirmez votre créneau rapidement.</p>
+        <div class="hero-actions">
+          <a href="pages/search.html" class="button primary-button">Trouver un centre</a>
+          <a href="pages/register.html" class="button">Créer un compte</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-section" aria-label="Recherche rapide">
+      <div class="container">
+        <h3 class="section-title">Recherche rapide</h3>
+        <form class="search-form card" action="pages/search.html" method="get">
+          <div class="form-field">
+            <label for="city">Ville ou code postal</label>
+            <input id="city" name="city" class="input-control" type="text" placeholder="Ex: Paris 75015" required>
+          </div>
+          <div class="form-field">
+            <label for="date">Date souhaitée</label>
+            <input id="date" name="date" class="input-control" type="date" required>
+          </div>
+          <button type="submit" class="button primary-button">Rechercher</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="features" class="features-section">
+      <div class="container">
+        <h3 class="section-title">Fonctionnalités clés</h3>
+        <div class="feature-grid">
+          <article class="card">
+            <h4>Recherche centralisée</h4>
+            <p>Comparez les centres disponibles autour de vous en un seul endroit.</p>
+          </article>
+          <article class="card">
+            <h4>Réservation immédiate</h4>
+            <p>Sélectionnez un créneau et confirmez votre rendez-vous en ligne.</p>
+          </article>
+          <article class="card">
+            <h4>Suivi personnalisé</h4>
+            <p>Retrouvez vos rendez-vous depuis votre espace utilisateur.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats" class="stats-section">
+      <div class="container stats-grid">
+        <article class="card stat-item">
+          <p class="stat-value">+120</p>
+          <p>Centres partenaires</p>
+        </article>
+        <article class="card stat-item">
+          <p class="stat-value">98%</p>
+          <p>Taux de satisfaction</p>
+        </article>
+        <article class="card stat-item">
+          <p class="stat-value">24h</p>
+          <p>Délai moyen de réservation</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="blog" class="blog-section">
+      <div class="container">
+        <h3 class="section-title">Derniers conseils</h3>
+        <div class="blog-grid">
+          <article class="card">
+            <h4>Quand faire son contrôle technique ?</h4>
+            <p>Comprendre les délais légaux et éviter les pénalités.</p>
+          </article>
+          <article class="card">
+            <h4>Préparer son véhicule avant rendez-vous</h4>
+            <p>Checklist simple pour gagner du temps le jour J.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-section">
+      <div class="container app-card card">
+        <div>
+          <h3 class="section-title">Application mobile</h3>
+          <p>Gérez vos réservations et recevez des rappels directement sur votre téléphone.</p>
+        </div>
+        <div class="hero-actions">
+          <a href="#" class="button primary-button">Télécharger sur iOS</a>
+          <a href="#" class="button">Télécharger sur Android</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h3 class="section-title">Contact</h3>
+        <form class="contact-form card">
+          <div class="form-field">
+            <label for="name">Nom</label>
+            <input id="name" class="input-control" type="text" placeholder="Votre nom" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" class="input-control" type="email" placeholder="vous@email.fr" required>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" class="input-control" rows="4" placeholder="Votre message" required></textarea>
+          </div>
+          <button type="submit" class="button primary-button">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Controle One - Plateforme de réservation de contrôle technique automobile.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>

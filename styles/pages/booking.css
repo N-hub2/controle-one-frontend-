@@ -1,0 +1,15 @@
+.page-booking {
+  padding: 2rem 0;
+}
+
+.booking-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.booking-feedback {
+  margin-top: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}

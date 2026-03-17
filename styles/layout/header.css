@@ -1,0 +1,10 @@
+.site-header {
+  background: var(--color-white);
+  padding: var(--space-md);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.brand a {
+  color: var(--color-text);
+  text-decoration: none;
+}

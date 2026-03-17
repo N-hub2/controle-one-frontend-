@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Controle One</title>
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+  <main class="page page-register container">
+    <section class="auth-box card">
+      <h1>Register</h1>
+      <form id="register-form" novalidate>
+        <div class="form-field">
+          <label for="register-name">Full name</label>
+          <input id="register-name" class="input-control" type="text" required>
+        </div>
+        <div class="form-field">
+          <label for="register-email">Email</label>
+          <input id="register-email" class="input-control" type="email" required>
+        </div>
+        <div class="form-field">
+          <label for="register-password">Password</label>
+          <input id="register-password" class="input-control" type="password" required>
+        </div>
+        <button type="submit" class="button primary-button">Create account</button>
+      </form>
+      <p>Already registered? <a href="login.html">Login</a></p>
+    </section>
+  </main>
+  <script src="../scripts/main.js" defer></script>
+</body>
+</html>
