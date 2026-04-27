@@ -3,144 +3,459 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Controle One - Réservez votre contrôle technique</title>
+  <meta name="description" content="Comparez les centres de contrôle technique près de chez vous, consultez les prix et réservez votre créneau en ligne avec Controle One.">
+  <title>Controle One - Comparez et réservez votre contrôle technique</title>
   <link rel="stylesheet" href="styles/main.css">
 </head>
-<body>
-  <header class="site-header">
+<body class="home-page">
+  <header class="site-header home-header">
     <div class="container nav-bar">
-      <h1 class="brand">Controle One</h1>
+      <a class="brand home-brand" href="index.html" aria-label="Accueil Controle One">
+        <img src="assets/logos/Subtract%20(1)%206.png" alt="" aria-hidden="true">
+        <span>CONTROLE ONE</span>
+      </a>
       <nav class="top-nav" aria-label="Navigation principale">
-        <a href="#features">Fonctionnalités</a>
-        <a href="#stats">Statistiques</a>
+        <a href="index.html" aria-current="page">Accueil</a>
+        <a href="#tarifs">Tarifs</a>
         <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-        <a href="pages/login.html" class="button">Connexion</a>
+        <a href="pages/about.html">À propos</a>
+        <a href="pages/contact.html">Contact</a>
       </nav>
+      <div class="nav-actions">
+        <a href="pages/login.html">Se connecter</a>
+        <a href="pages/register.html" class="button primary-button">S'inscrire</a>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="hero-section">
-      <div class="container hero-content">
-        <p class="hero-kicker">Plateforme nationale</p>
-        <h2>Réservez votre contrôle technique en quelques clics</h2>
-        <p>Trouvez un centre agréé en France, comparez les disponibilités et confirmez votre créneau rapidement.</p>
-        <div class="hero-actions">
-          <a href="pages/search.html" class="button primary-button">Trouver un centre</a>
-          <a href="pages/register.html" class="button">Créer un compte</a>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Comparez les centres de contrôle technique près de chez vous</h1>
+          <p class="hero-lead">Nous proposons une plateforme de réservation de contrôles techniques automobiles en France, permettant de trouver facilement un centre proche, consulter les informations essentielles comme le prix, la distance et les disponibilités, puis réserver rapidement un créneau adapté.</p>
+          <div class="hero-actions">
+            <a href="pages/search.html" class="button primary-button">Trouver un centre</a>
+          </div>
         </div>
+        <div class="hero-visual" aria-hidden="true">
+          <img class="hero-watermark" src="assets/logos/Subtract%20(6)%202.png" alt="">
+          <img src="assets/images/Rectangle%202279.png" alt="">
+        </div>
+      </div>
+
+      <div class="hero-search-area">
+        <section class="hero-search-panel" aria-labelledby="hero-search-title">
+          <h2 id="hero-search-title">Comparez les centres de contrôle technique près de chez vous</h2>
+          <p>Trouvez rapidement un centre de contrôle technique proche de votre localisation, comparez les prix et réservez facilement votre créneau en ligne.</p>
+
+          <form class="hero-search" action="pages/search.html" method="get" aria-label="Comparer les centres de contrôle technique">
+            <div class="search-field search-field--postal">
+              <label for="postal-code">Code postal</label>
+              <input id="postal-code" name="postalCode" type="text" inputmode="numeric" placeholder="88100">
+            </div>
+            <div class="search-field search-field--plate">
+              <label for="registration">Immatriculation</label>
+              <input id="registration" name="registration" type="text" placeholder="AB-123-CD">
+            </div>
+            <span class="search-separator" aria-hidden="true">ou</span>
+            <fieldset class="vehicle-details">
+              <legend>Marque, Modèle, Année ...</legend>
+              <div class="vehicle-detail-grid">
+                <div class="search-field">
+                  <label for="vehicle-make" class="visually-hidden">Marque</label>
+                  <input id="vehicle-make" name="make" type="text" placeholder="Marque ...">
+                </div>
+                <div class="search-field">
+                  <label for="vehicle-model" class="visually-hidden">Modèle</label>
+                  <input id="vehicle-model" name="model" type="text" placeholder="Modèle ...">
+                </div>
+                <div class="search-field">
+                  <label for="vehicle-year" class="visually-hidden">Année</label>
+                  <select id="vehicle-year" name="year">
+                    <option value="">Année</option>
+                    <option value="2026">2026</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                  </select>
+                </div>
+                <div class="search-field">
+                  <label for="vehicle-version" class="visually-hidden">Version</label>
+                  <select id="vehicle-version" name="version">
+                    <option value="">Version</option>
+                    <option value="essence">Essence</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="hybride">Hybride</option>
+                    <option value="electrique">Électrique</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+            <button type="submit" class="button primary-button">Recherche</button>
+          </form>
+        </section>
       </div>
     </section>
 
-    <section class="search-section" aria-label="Recherche rapide">
-      <div class="container">
-        <h3 class="section-title">Recherche rapide</h3>
-        <form class="search-form card" action="pages/search.html" method="get">
-          <div class="form-field">
-            <label for="city">Ville ou code postal</label>
-            <input id="city" name="city" class="input-control" type="text" placeholder="Ex: Paris 75015" required>
-          </div>
-          <div class="form-field">
-            <label for="date">Date souhaitée</label>
-            <input id="date" name="date" class="input-control" type="date" required>
-          </div>
-          <button type="submit" class="button primary-button">Rechercher</button>
-        </form>
+    <section id="how-it-works" class="steps-section">
+      <div class="container steps-heading">
+        <h2>Comment ça marche ?</h2>
+        <p>
+          Trouvez un centre de contrôle technique en quelques minutes<br>
+          Réserver votre contrôle technique n'a jamais été aussi simple.<br>
+          Suivez ces étapes pour trouver rapidement un centre proche de vous.
+        </p>
+      </div>
+      <div class="container steps-grid">
+        <div class="steps-image">
+          <img src="assets/images/Rectangle%202290.png" alt="Technicien dans un centre de contrôle technique">
+        </div>
+        <div class="steps-brand" aria-hidden="true">
+          <img src="assets/logos/Subtract%20(1)%202.png" alt="">
+          <span>ONE</span>
+        </div>
+        <div class="steps-list" aria-label="Étapes de réservation">
+          <article class="glass-step">
+            <h3 class="step-heading">
+              <button class="step-trigger" type="button" id="step-trigger-1" aria-expanded="false" aria-controls="step-panel-1">
+                <span class="step-title">Recherchez un centre</span>
+              </button>
+            </h3>
+            <div class="step-panel" id="step-panel-1" role="region" aria-labelledby="step-trigger-1">
+              <p>Entrez votre code postal ou votre immatriculation pour trouver les centres de contrôle technique proches de votre localisation.</p>
+            </div>
+          </article>
+          <article class="glass-step">
+            <h3 class="step-heading">
+              <button class="step-trigger" type="button" id="step-trigger-2" aria-expanded="false" aria-controls="step-panel-2">
+                <span class="step-title">Comparez les centres</span>
+              </button>
+            </h3>
+            <div class="step-panel" id="step-panel-2" role="region" aria-labelledby="step-trigger-2">
+              <p>Consultez les prix, les disponibilités et les informations des centres afin de choisir celui qui correspond le mieux à vos besoins.</p>
+            </div>
+          </article>
+          <article class="glass-step">
+            <h3 class="step-heading">
+              <button class="step-trigger" type="button" id="step-trigger-3" aria-expanded="false" aria-controls="step-panel-3">
+                <span class="step-title">Réservez votre créneau</span>
+              </button>
+            </h3>
+            <div class="step-panel" id="step-panel-3" role="region" aria-labelledby="step-trigger-3">
+              <p>Sélectionnez l'horaire qui vous convient et réservez votre contrôle technique directement en ligne en quelques clics.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
     <section id="features" class="features-section">
-      <div class="container">
-        <h3 class="section-title">Fonctionnalités clés</h3>
-        <div class="feature-grid">
-          <article class="card">
-            <h4>Recherche centralisée</h4>
-            <p>Comparez les centres disponibles autour de vous en un seul endroit.</p>
+      <div class="container section-heading">
+        <p class="eyebrow">Service centralisé</p>
+        <h2>Trouvez facilement un centre de contrôle technique fiable près de chez vous</h2>
+        <p>Controle One réunit les informations clés pour vous aider à réserver plus vite, avec plus de clarté.</p>
+      </div>
+      <div class="container feature-grid">
+        <div class="feature-card-wrap">
+          <article class="feature-card">
+            <div class="feature-card-icon-wrap">
+              <img src="assets/icons/Group%203079%201.png" alt="" aria-hidden="true">
+            </div>
+            <div class="feature-card-body">
+              <h3>Centres certifiés</h3>
+              <p>Des centres identifiés, vérifiés et présentés avec les informations utiles.</p>
+            </div>
           </article>
-          <article class="card">
-            <h4>Réservation immédiate</h4>
-            <p>Sélectionnez un créneau et confirmez votre rendez-vous en ligne.</p>
+        </div>
+        <div class="feature-card-wrap">
+          <article class="feature-card">
+            <div class="feature-card-icon-wrap">
+              <img src="assets/icons/00_11.%20Luxury%20Cars%2C%20Sport%2C%20Classic%2C%20Elegant%2C%20Performance%203.png" alt="" aria-hidden="true">
+            </div>
+            <div class="feature-card-body">
+              <h3>Recherche locale</h3>
+              <p>Un parcours pensé pour trouver rapidement une adresse proche et disponible.</p>
+            </div>
           </article>
-          <article class="card">
-            <h4>Suivi personnalisé</h4>
-            <p>Retrouvez vos rendez-vous depuis votre espace utilisateur.</p>
+        </div>
+        <div class="feature-card-wrap">
+          <article class="feature-card">
+            <div class="feature-card-icon-wrap">
+              <img src="assets/icons/Group%203080%201.png" alt="" aria-hidden="true">
+            </div>
+            <div class="feature-card-body">
+              <h3>Prix transparents</h3>
+              <p>Comparez les tarifs par centre et par type de véhicule avant de réserver.</p>
+            </div>
+          </article>
+        </div>
+        <div class="feature-card-wrap">
+          <article class="feature-card">
+            <div class="feature-card-icon-wrap">
+              <img src="assets/icons/Group%203121.png" alt="" aria-hidden="true">
+            </div>
+            <div class="feature-card-body">
+              <h3>Réservation simple</h3>
+              <p>Choisissez un créneau clair et retrouvez votre rendez-vous dans votre espace.</p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="stats" class="stats-section">
+    <section class="partners-section" aria-label="Nos garages partenaires">
+      <div class="container partners-row">
+        <h2 class="partners-title">Nos garages partenaires</h2>
+        <div class="partners-marquee" aria-label="Défilement des garages partenaires">
+          <div class="partners-track">
+            <ul class="partners-list">
+              <li class="partner-item"><a class="partner-logo" href="#" aria-label="SECURITEST"><img src="assets/logos/New%20folder/image%202096.png" alt="SECURITEST"></a></li>
+              <li class="partner-item"><a class="partner-logo" href="#" aria-label="AUTOSUR"><img src="assets/logos/New%20folder/image%202097.png" alt="AUTOSUR"></a></li>
+              <li class="partner-item"><a class="partner-logo" href="#" aria-label="AUTOVISION"><img src="assets/logos/New%20folder/image%202098.png" alt="AUTOVISION"></a></li>
+              <li class="partner-item"><a class="partner-logo" href="#" aria-label="AUTOSECURITE"><img src="assets/logos/New%20folder/image%202099.png" alt="AUTOSECURITE"></a></li>
+              <li class="partner-item"><a class="partner-logo" href="#" aria-label="NORISKO"><img src="assets/logos/New%20folder/image%202100.png" alt="NORISKO"></a></li>
+              <li class="partner-item"><a class="partner-logo" href="#" aria-label="DEKRA"><img src="assets/logos/New%20folder/image%202101.png" alt="DEKRA"></a></li>
+              <li class="partner-item"><a class="partner-logo" href="#" aria-label="MON CONTROLE TECHNIQUE"><img src="assets/logos/New%20folder/image%202102.png" alt="MON CONTROLE TECHNIQUE"></a></li>
+            </ul>
+            <ul class="partners-list" aria-hidden="true">
+              <li class="partner-item"><a class="partner-logo" href="#" tabindex="-1" aria-label=""><img src="assets/logos/New%20folder/image%202096.png" alt=""></a></li>
+              <li class="partner-item"><a class="partner-logo" href="#" tabindex="-1" aria-label=""><img src="assets/logos/New%20folder/image%202097.png" alt=""></a></li>
+              <li class="partner-item"><a class="partner-logo" href="#" tabindex="-1" aria-label=""><img src="assets/logos/New%20folder/image%202098.png" alt=""></a></li>
+              <li class="partner-item"><a class="partner-logo" href="#" tabindex="-1" aria-label=""><img src="assets/logos/New%20folder/image%202099.png" alt=""></a></li>
+              <li class="partner-item"><a class="partner-logo" href="#" tabindex="-1" aria-label=""><img src="assets/logos/New%20folder/image%202100.png" alt=""></a></li>
+              <li class="partner-item"><a class="partner-logo" href="#" tabindex="-1" aria-label=""><img src="assets/logos/New%20folder/image%202101.png" alt=""></a></li>
+              <li class="partner-item"><a class="partner-logo" href="#" tabindex="-1" aria-label=""><img src="assets/logos/New%20folder/image%202102.png" alt=""></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tarifs" class="why-section">
+      <div class="container why-layout">
+        <div class="why-card">
+          <img class="why-card-base" src="assets/images/Rectangle%202314.png" alt="Carte Controle One" aria-hidden="true">
+          <img class="why-ribbon" src="assets/images/Group%201000004176.png" alt="" aria-hidden="true">
+          <a href="pages/search.html" class="button primary-button">Réservation simple et rapide</a>
+        </div>
+        <div class="why-content">
+          <p class="eyebrow">POURQUOI CHOISIR</p>
+          <h2>Pourquoi choisir Controle One ?</h2>
+          <p>Avec Controle One, accédez facilement à une plateforme dédiée au contrôle technique automobile en France. Notre service a été conçu pour simplifier la recherche d'un centre et vous aider à trouver les options disponibles autour de vous.</p>
+          <p>Grâce à une interface claire et intuitive, vous pouvez parcourir les différentes possibilités, consulter les informations importantes et choisir la solution la plus adaptée à votre situation.</p>
+          <p>Controle One vous accompagne tout au long du processus afin de rendre l'organisation de votre contrôle technique plus simple, plus rapide et plus transparente.</p>
+        </div>
+      </div>
+      <div class="container why-panel">
+        <div class="why-grid">
+          <article>
+            <div class="why-grid-icon-wrap">
+              <img src="assets/icons/Group%203101%201.png" alt="" aria-hidden="true">
+            </div>
+            <h3>Trouver un centre proche</h3>
+            <p>Localisez rapidement les centres de contrôle technique disponibles autour de votre position. Notre plateforme vous aide à identifier les centres les plus proches afin de gagner du temps et simplifier votre recherche.</p>
+          </article>
+          <article>
+            <div class="why-grid-icon-wrap">
+              <img src="assets/icons/Group%203121.png" alt="" aria-hidden="true">
+            </div>
+            <h3>Comparer les prix</h3>
+            <p>Consultez et comparez facilement les tarifs proposés par différents centres de contrôle technique. Vous pouvez ainsi choisir l'offre la plus adaptée à votre budget.</p>
+          </article>
+          <article>
+            <div class="why-grid-icon-wrap">
+              <img src="assets/icons/Group%203080%201.png" alt="" aria-hidden="true">
+            </div>
+            <h3>Réserver un rendez-vous</h3>
+            <p>Sélectionnez le créneau horaire qui vous convient et confirmez votre réservation directement en ligne en quelques clics seulement.</p>
+          </article>
+          <article>
+            <div class="why-grid-icon-wrap">
+              <img src="assets/icons/Group%203120.png" alt="" aria-hidden="true">
+            </div>
+            <h3>Centres certifiés</h3>
+            <p>Consultez et comparez facilement les tarifs proposés par différents centres de contrôle technique. Vous pouvez ainsi choisir l'offre la plus adaptée à votre budget.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats" class="stats-band" aria-label="Statistiques Controle One">
       <div class="container stats-grid">
-        <article class="card stat-item">
-          <p class="stat-value">+120</p>
-          <p>Centres partenaires</p>
+        <article>
+          <img src="assets/icons/Vector%20(16).png" alt="" aria-hidden="true">
+          <strong>15 318+</strong>
+          <span>CENTRES DE CONTRÔLE<br>TECHNIQUE</span>
         </article>
-        <article class="card stat-item">
-          <p class="stat-value">98%</p>
-          <p>Taux de satisfaction</p>
+        <article>
+          <img src="assets/icons/Vector%20(17).png" alt="" aria-hidden="true">
+          <strong>1 729+</strong>
+          <span>VILLES<br>CHAQUE MOIS</span>
         </article>
-        <article class="card stat-item">
-          <p class="stat-value">24h</p>
-          <p>Délai moyen de réservation</p>
+        <article>
+          <img src="assets/icons/Vector%20(15).png" alt="" aria-hidden="true">
+          <strong>3 459+</strong>
+          <span>COMPARAISONS<br>EFFECTUÉES</span>
+        </article>
+        <article>
+          <img src="assets/icons/Vector%20(14).png" alt="" aria-hidden="true">
+          <strong>247+</strong>
+          <span>CENTRES<br>PARTENAIRES</span>
         </article>
       </div>
     </section>
 
     <section id="blog" class="blog-section">
-      <div class="container">
-        <h3 class="section-title">Derniers conseils</h3>
-        <div class="blog-grid">
-          <article class="card">
-            <h4>Quand faire son contrôle technique ?</h4>
-            <p>Comprendre les délais légaux et éviter les pénalités.</p>
+      <div class="container section-heading">
+        <h2>Conseils et actualités sur le contrôle technique</h2>
+      </div>
+      <div class="container blog-layout">
+        <article class="featured-article">
+          <img src="assets/images/unsplash_20qcctvyR1Q.png" alt="Préparation d'un véhicule avant contrôle">
+          <img class="featured-watermark" src="assets/logos/Subtract%20(6)%202.png" alt="" aria-hidden="true">
+          <div class="featured-overlay">
+            <div class="featured-summary">
+              <span class="featured-kicker">Préparation</span>
+              <h3>Préparer sa voiture pour le contrôle technique</h3>
+              <span class="featured-date">le 16 mars 2026</span>
+            </div>
+            <div class="featured-bottom-row">
+              <p>Découvrez les points essentiels à vérifier avant votre contrôle technique afin de préparer votre véhicule dans les meilleures conditions, éviter une contre-visite inutile et gagner du temps le jour de votre rendez-vous.</p>
+              <a href="#blog" class="button primary-button">En savoir plus</a>
+            </div>
+          </div>
+        </article>
+        <div class="article-list">
+          <article>
+            <img src="assets/images/scratched-and-dented-car-damaged-part-of-the-car-2026-01-07-06-35-05-utc%201.png" alt="">
+            <div>
+              <p class="blog-date">le 16 mars 2026</p>
+              <h3>Accident et contrôle technique : que faut-il vérifier ?</h3>
+              <a href="#blog">En savoir plus</a>
+            </div>
           </article>
-          <article class="card">
-            <h4>Préparer son véhicule avant rendez-vous</h4>
-            <p>Checklist simple pour gagner du temps le jour J.</p>
+          <article>
+            <img src="assets/images/mechanical-2026-01-08-23-42-21-utc%201.png" alt="">
+            <div>
+              <p class="blog-date">le 16 mars 2026</p>
+              <h3>Les pièces mécaniques essentielles à vérifier</h3>
+              <a href="#blog">En savoir plus</a>
+            </div>
+          </article>
+          <article>
+            <img src="assets/images/braking-system-car-brake-disk-with-caliper-isolat-2026-01-08-06-52-56-utc%201.png" alt="">
+            <div>
+              <p class="blog-date">le 16 mars 2026</p>
+              <h3>Système de freinage : un point clé du contrôle technique</h3>
+              <a href="#blog">En savoir plus</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
     <section class="app-section">
-      <div class="container app-card card">
-        <div>
-          <h3 class="section-title">Application mobile</h3>
-          <p>Gérez vos réservations et recevez des rappels directement sur votre téléphone.</p>
+      <div class="container app-layout">
+        <div class="app-copy">
+          <h2>Téléchargez l'application Controle One</h2>
+          <p>Trouvez rapidement un centre de contrôle technique près de chez vous, comparez les prix des différents centres et réservez votre rendez-vous en quelques secondes directement depuis votre téléphone.</p>
+          <ul>
+            <li>Trouver un centre de contrôle technique proche</li>
+            <li>Comparer facilement les prix</li>
+            <li>Réserver votre rendez-vous en ligne</li>
+            <li>Recevoir des rappels pour votre contrôle technique</li>
+          </ul>
+          <p class="app-download-title">Télécharger maintenant :</p>
+          <div class="store-badges">
+            <a href="#" aria-label="Télécharger sur l'App Store">
+              <img src="assets/logos/Download_on_the_App_Store_logo.png" alt="Download on the App Store">
+            </a>
+            <a href="#" aria-label="Télécharger sur Google Play">
+              <img src="assets/logos/Google_Play_Store_badge_EN%201.png" alt="Get it on Google Play">
+            </a>
+          </div>
         </div>
-        <div class="hero-actions">
-          <a href="#" class="button primary-button">Télécharger sur iOS</a>
-          <a href="#" class="button">Télécharger sur Android</a>
+        <div class="app-visual" aria-hidden="true">
+          <div class="app-badge">
+            <div class="app-badge-icon">
+              <img src="assets/logos/Subtract%20(1)%206.png" alt="">
+            </div>
+            <div class="app-badge-rating">★★★★★</div>
+          </div>
+          <img class="app-car" src="assets/images/Sans%20titre%20(3)%202.png" alt="">
         </div>
       </div>
     </section>
 
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <h3 class="section-title">Contact</h3>
-        <form class="contact-form card">
-          <div class="form-field">
-            <label for="name">Nom</label>
-            <input id="name" class="input-control" type="text" placeholder="Votre nom" required>
-          </div>
-          <div class="form-field">
-            <label for="email">Email</label>
-            <input id="email" class="input-control" type="email" placeholder="vous@email.fr" required>
-          </div>
-          <div class="form-field">
-            <label for="message">Message</label>
-            <textarea id="message" class="input-control" rows="4" placeholder="Votre message" required></textarea>
-          </div>
+    <section class="contact-preview">
+      <div class="container contact-layout">
+        <img src="assets/images/car-dealer-woman-auto-dealership-and-rental-conce-2026-01-08-22-53-07-utc%201.png" alt="Conseillère Controle One dans un centre automobile">
+        <form class="question-card" action="pages/contact.html" method="get">
+          <h2>Une question ?</h2>
+          <p>Vous avez une question sur le contrôle technique ou la réservation d’un rendez-vous ? Laissez-nous votre numéro et notre équipe vous recontactera rapidement.</p>
+          <label for="quick-name" class="visually-hidden">Votre nom</label>
+          <input id="quick-name" name="name" type="text" placeholder="Votre nom">
+          <label for="quick-contact" class="visually-hidden">Votre numéro de téléphone ou email</label>
+          <input id="quick-contact" name="contact" type="text" placeholder="Votre numéro de téléphone ou email">
           <button type="submit" class="button primary-button">Envoyer</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 Controle One - Plateforme de réservation de contrôle technique automobile.</p>
+  <footer class="site-footer home-footer">
+    <div class="container footer-layout">
+      <div class="footer-brand-panel">
+        <a class="footer-brand footer-brand--footer" href="index.html">
+          <img src="assets/logos/Subtract%20(1)%206.png" alt="" aria-hidden="true">
+          <span>CONTROLE ONE</span>
+        </a>
+        <img class="footer-mark" src="assets/logos/Subtract%20(6)%202.png" alt="" aria-hidden="true">
+      </div>
+
+      <div class="footer-column">
+        <h2>Navigation</h2>
+        <nav class="footer-nav" aria-label="Navigation pied de page">
+          <a href="index.html">Accueil</a>
+          <a href="#tarifs">Tarifs</a>
+          <a href="#blog">Blog</a>
+          <a href="pages/about.html">À propos</a>
+          <a href="pages/contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-column footer-contact">
+        <h2>Contact</h2>
+        <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+        <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+        <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+        <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+        <a class="footer-contact-line footer-contact-line--icon" href="https://wa.me/33123456789">
+          <img src="assets/icons/Group.png" alt="" aria-hidden="true">
+          <span>+33 1 23 45 67 89</span>
+        </a>
+        <div class="footer-contact-line footer-contact-line--icon">
+          <img src="assets/icons/Vector%20(18).png" alt="" aria-hidden="true">
+          <span>France</span>
+        </div>
+      </div>
+
+      <div class="footer-column footer-social">
+        <h2>Suivez-nous</h2>
+        <a class="footer-social-item" href="#" aria-label="Facebook Controle One">
+          <img src="assets/icons/Facebook.png" alt="" aria-hidden="true">
+          <span>Controle_one_OFFICIAL</span>
+        </a>
+        <a class="footer-social-item" href="#" aria-label="Instagram Controle One">
+          <img src="assets/icons/Instagram-black.png" alt="" aria-hidden="true">
+          <span>Controle_one_OFFICIAL</span>
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Controle One. Tous droits réservés.</p>
+      </div>
     </div>
   </footer>
 

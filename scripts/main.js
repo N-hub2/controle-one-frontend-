@@ -47,4 +47,49 @@ document.addEventListener('DOMContentLoaded', () => {
       dashboardDate.textContent = `Date: ${storedDate}`;
     }
   }
+
+  const stepItems = Array.from(document.querySelectorAll('.steps-list .glass-step'));
+  if (stepItems.length) {
+    const openStep = (activeStep) => {
+      stepItems.forEach((stepItem) => {
+        const trigger = stepItem.querySelector('.step-trigger');
+        const isActive = stepItem === activeStep;
+
+        stepItem.classList.toggle('is-open', isActive);
+        if (trigger) {
+          trigger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        }
+      });
+    };
+
+    const closeAllSteps = () => {
+      stepItems.forEach((stepItem) => {
+        const trigger = stepItem.querySelector('.step-trigger');
+        stepItem.classList.remove('is-open');
+        if (trigger) {
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    };
+
+    closeAllSteps();
+
+    stepItems.forEach((stepItem) => {
+      const trigger = stepItem.querySelector('.step-trigger');
+      if (!trigger) {
+        return;
+      }
+
+      trigger.addEventListener('click', () => {
+        const isOpen = stepItem.classList.contains('is-open');
+
+        if (isOpen) {
+          closeAllSteps();
+          return;
+        }
+
+        openStep(stepItem);
+      });
+    });
+  }
 });
