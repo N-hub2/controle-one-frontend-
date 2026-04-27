@@ -1,13 +1,25 @@
 .button {
-  display: inline-block;
-  padding: 0.65rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 42px;
+  padding: 0.75rem 1.15rem;
   border-radius: var(--radius-md);
   text-decoration: none;
   border: none;
   cursor: pointer;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .primary-button {
   background: var(--color-primary);
   color: var(--color-white);
+}
+
+.secondary-button {
+  background: var(--color-white);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
 }

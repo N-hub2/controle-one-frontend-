@@ -19,6 +19,9 @@ yarn-error.log*
 /tmp
 /temp
 *.tmp
+chrome-headless-profile/
+blog-section-check.png
+full-page-blog-check*.png
 
 # Environnement
 .env
