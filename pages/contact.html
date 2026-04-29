@@ -3,44 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contactez Controle One pour toute question sur le contrôle technique ou la réservation.">
   <title>Nous contacter - Controle One</title>
-  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/main.css?v=2">
 </head>
-<body style="background-color: #f8fafc; margin: 0; padding: 0;">
-  <header class="site-header">
+<body class="home-page">
+  <header class="site-header home-header">
     <div class="container nav-bar">
-      <h1 class="brand"><a href="../index.html" style="text-decoration:none; color:inherit;">Controle One</a></h1>
+      <a class="brand home-brand" href="../index.html" aria-label="Accueil Controle One">
+        <img src="../assets/logos/Subtract%20(1)%206.png" alt="" aria-hidden="true">
+        <span>CONTROLE ONE</span>
+      </a>
       <nav class="top-nav" aria-label="Navigation principale">
-        <a href="../index.html#features">Fonctionnalités</a>
-        <a href="../index.html#stats">Statistiques</a>
+        <a href="../index.html">Accueil</a>
+        <a href="../index.html#tarifs">Tarifs</a>
         <a href="../index.html#blog">Blog</a>
         <a href="about.html">À propos</a>
-        <a href="contact.html" style="color:#3b5998; font-weight:bold;">Contact</a>
-        <a href="login.html" class="button">Connexion</a>
+        <a href="contact.html" aria-current="page">Contact</a>
       </nav>
+      <div class="nav-actions">
+        <a href="login.html">Se connecter</a>
+        <a href="register.html" class="button primary-button">S'inscrire</a>
+      </div>
     </div>
   </header>
 
   <main class="page-contact">
-    <section class="page-contact-wrapper">
-      <div class="da-contact-content">
-        <div class="da-contact-card">
-          <h2>Une question ?</h2>
+    <section class="contact-preview">
+      <div class="container contact-layout">
+        <img src="../assets/images/contact_hero.png" alt="Conseillère Controle One dans un centre automobile">
+        <form class="question-card" action="#" method="POST">
+          <h1>Une question ?</h1>
           <p>Vous avez une exigence de contrôle technique ou avez besoin d'une consultation rapide ? Remplissez ce formulaire et nous ferons en sorte de vous répondre rapidement.</p>
-
-          <form class="contact-form" action="#" method="POST">
-            <div class="form-field">
-              <input type="text" id="name" name="name" class="input-control" placeholder="Entrez votre nom complet" required>
-            </div>
-            <div class="form-field">
-              <input type="email" id="email" name="email" class="input-control" placeholder="Pouvez-vous indiquer votre e-mail ?" required>
-            </div>
-            <div class="form-field">
-              <textarea id="message" name="message" class="input-control" rows="5" placeholder="Écrivez-nous votre message..." required></textarea>
-            </div>
-            <button type="submit" class="primary-button">Envoyer</button>
-          </form>
-        </div>
+          <label for="name" class="visually-hidden">Votre nom complet</label>
+          <input id="name" name="name" type="text" placeholder="Entrez votre nom complet" required>
+          <label for="email" class="visually-hidden">Votre e-mail</label>
+          <input id="email" name="email" type="email" placeholder="Pouvez-vous indiquer votre e-mail ?" required>
+          <label for="message" class="visually-hidden">Votre message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Écrivez-nous votre message..." required style="width: 100%; min-height: 43px; border: 1px solid rgba(197, 206, 247, 0.9); border-radius: 6px; background: #dce3fa; color: #434752; font-size: 0.94rem; font-family: inherit; padding: 0.74rem 1rem; margin-bottom: 0.35rem; resize: vertical; box-sizing: border-box;"></textarea>
+          <button type="submit" class="button primary-button">Envoyer</button>
+        </form>
       </div>
     </section>
   </main>
