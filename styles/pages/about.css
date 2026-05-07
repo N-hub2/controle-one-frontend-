@@ -163,6 +163,78 @@
   letter-spacing: 1px;
 }
 
+/* Animation 3D pour l'image de la voiture */
+.3d-car-animation {
+  perspective: 1000px;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: float-3d 5s ease-in-out infinite;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+  border-radius: 24px;
+}
+
+.3d-car-animation:hover {
+  transform: scale(1.05) rotateY(-8deg) rotateX(5deg);
+  filter: drop-shadow(0 25px 45px rgba(71, 98, 255, 0.35));
+}
+
+@keyframes float-3d {
+  0%, 100% {
+    transform: translateY(0) rotateY(0deg) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(3deg) rotateX(2deg);
+  }
+}
+
+/* Refonte de la section Why Panel pour À Propos (Gris Anthracite Transparent) */
+.page-about .why-panel {
+  background: #ebedf2; /* Fond un peu plus gris pour faire ressortir la transparence */
+  padding: 4rem 2rem;
+}
+
+.page-about .why-panel::before {
+  display: none;
+}
+
+.page-about .why-grid article {
+  background: rgba(15, 23, 42, 0.08); /* Gris ardoise très transparent mais plus sombre */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  padding: 2.5rem 1.8rem;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.page-about .why-grid article:hover {
+  background: rgba(15, 23, 42, 0.12);
+  border-color: #4762ff;
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(71, 98, 255, 0.15);
+}
+
+.page-about .why-grid h3 {
+  color: #1a1c23; /* Titre plus sombre pour plus de force */
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.page-about .why-grid p {
+  color: #434752;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.page-about .why-grid-icon-wrap {
+  background: #4762ff;
+  box-shadow: 0 8px 16px rgba(71, 98, 255, 0.25);
+}
+
+.page-about .why-grid-icon-wrap img {
+  filter: brightness(0) invert(1);
+}
+
 /* Ajustements pour mobile */
 @media (max-width: 768px) {
   .da-dark-grid-container {
