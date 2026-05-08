@@ -1,99 +1,46 @@
-/* Styles spécifiques à la page Contact DA */
-.page-contact-wrapper {
-  position: relative;
-  width: 100%;
-  min-height: 500px;
-  background-image: url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2000&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  padding: 4rem 2rem;
+/* Styles spécifiques à la page Contact */
+
+.page-contact .contact-preview {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
 }
 
-/* Gradient pour fondre l'image dans le fond de page */
-.page-contact-wrapper::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 150px;
-  background: linear-gradient(to bottom, rgba(20,20,20,0) 0%, rgba(20,20,20,1) 100%);
-  pointer-events: none;
+.page-contact .contact-layout {
+  min-height: 680px;
 }
 
-.da-contact-content {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+.page-contact .contact-layout > img {
+  height: 680px !important;
+  min-height: 680px !important;
+  object-position: center;
 }
 
-.da-contact-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 2.5rem;
-  width: 100%;
-  max-width: 450px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+.page-contact .question-card {
+  top: 50% !important;
+  bottom: auto !important;
+  transform: translateY(-50%) !important;
+  right: clamp(2rem, 15vw, 18rem);
+  width: min(460px, calc(100% - 2rem));
+  max-width: 460px;
 }
 
-.da-contact-card h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  color: #1a1a1a;
+@media (max-width: 900px) {
+  .page-contact .question-card {
+    right: 2rem;
+  }
 }
 
-.da-contact-card p {
-  color: #666;
-  font-size: 0.9rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-}
-
-.da-contact-card .form-field {
-  margin-bottom: 1rem;
-}
-
-.da-contact-card label {
-  display: none; /* Cache les labels pour coller au design épuré, on utilise des placeholders explicites */
-}
-
-.da-contact-card .input-control {
-  width: 100%;
-  background: #eef2fa;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  padding: 14px 16px;
-  font-size: 0.95rem;
-  transition: border-color 0.2s;
-  box-sizing: border-box;
-}
-
-.da-contact-card .input-control:focus {
-  border-color: #3b5998;
-  outline: none;
-  background: #fff;
-}
-
-.da-contact-card .primary-button {
-  background: #3b5998;
-  background: linear-gradient(90deg, #4f6bff, #3b5998);
-  color: white;
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.da-contact-card .primary-button:hover {
-  opacity: 0.9;
+@media (max-width: 640px) {
+  .page-contact .contact-layout > img {
+    height: 400px;
+    min-height: 400px;
+  }
+  
+  .page-contact .question-card {
+    position: relative;
+    bottom: auto;
+    transform: none;
+    right: auto;
+    margin: -3rem auto 0;
+  }
 }
