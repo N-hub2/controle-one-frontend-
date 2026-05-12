@@ -7,23 +7,33 @@
 .map-section {
   padding: 4rem 0;
   background: white;
+  text-align: center;
+}
+
+.map-section .section-heading {
+  margin: 0 auto 3rem;
+  max-width: 800px;
 }
 
 .map-container {
   width: 100%;
   height: 500px;
-  background: #eef2f7;
+  background: #f0f4f8;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-soft);
   overflow: hidden;
   position: relative;
   border: 1px solid var(--color-border);
+  margin: 0 auto;
 }
 
 .map-placeholder {
   width: 100%;
   height: 100%;
-  background: url('https://api.mapbox.com/styles/v1/mapbox/light-v10/static/2.3522,48.8566,12/1200x500?access_token=pk.eyJ1IjoiZGVlcG1pbmQiLCJhIjoiY2t5Z2Z5Z3Z6MGZ6NDJvcXlyNTRnZzV6dyJ9.fake_token') center/cover no-repeat;
+  background-color: #e5e9f0;
+  background-image: 
+    radial-gradient(#ccd3e0 2px, transparent 2px);
+  background-size: 30px 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,14 +43,15 @@
   position: absolute;
   top: 2rem;
   left: 2rem;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px);
   padding: 1.5rem;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   max-width: 320px;
   z-index: 5;
+  text-align: left;
 }
 
 .map-overlay-card h2 {
@@ -69,38 +80,40 @@
 }
 
 .centers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 2rem;
-}
-
-.center-card-premium {
-  background: white;
-  border-radius: var(--radius-xl);
-  padding: 2.5rem;
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-card);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
+.center-card-premium {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2.5rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 2.5rem;
+}
+
 .center-card-premium:hover {
-  transform: translateY(-8px);
+  transform: translateX(10px);
   box-shadow: var(--shadow-soft);
+  border-color: var(--color-primary);
 }
 
 .center-card-header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .center-info h3 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  margin-bottom: 0.4rem;
+  margin: 0;
 }
 
 .center-location {
@@ -114,58 +127,59 @@
 .center-price-tag {
   background: var(--color-primary-soft);
   color: var(--color-primary);
-  padding: 0.6rem 1rem;
+  padding: 0.6rem 1.2rem;
   border-radius: 12px;
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  min-width: 80px;
+  text-align: center;
 }
 
 .center-features {
   display: flex;
-  gap: 1rem;
+  gap: 0.8rem;
   flex-wrap: wrap;
+  max-width: 250px;
 }
 
 .feature-tag {
   background: #f1f4f9;
-  padding: 0.3rem 0.8rem;
+  padding: 0.25rem 0.6rem;
   border-radius: 6px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #5f6c8d;
+  white-space: nowrap;
 }
 
 .center-availability {
-  border-top: 1px solid var(--color-border);
-  padding-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-top: 0;
+  padding-top: 0;
 }
 
 .avail-title {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--color-text-muted);
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  display: none; /* Hide in list view */
 }
 
 .slots-row {
   display: flex;
-  gap: 0.8rem;
-  margin-bottom: 1.5rem;
+  gap: 0.6rem;
 }
 
 .slot-btn {
-  flex: 1;
   background: white;
   border: 1px solid var(--color-border);
-  padding: 0.6rem;
+  padding: 0.5rem 0.8rem;
   border-radius: 8px;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 650;
   cursor: pointer;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .slot-btn:hover {
@@ -180,10 +194,45 @@
   border-color: var(--color-primary);
 }
 
+.booking-action {
+  min-width: 160px;
+}
+
 /* Responsive */
+@media (max-width: 1200px) {
+  .center-card-premium {
+    grid-template-columns: 1fr auto;
+    gap: 1.5rem;
+  }
+  
+  .center-features {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
-  .centers-grid {
+  .center-card-premium {
     grid-template-columns: 1fr;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .center-location {
+    justify-content: center;
+  }
+  
+  .center-price-tag {
+    align-self: center;
+  }
+  
+  .slots-row {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .center-availability {
+    flex-direction: column;
+    gap: 1rem;
   }
   
   .map-container {
