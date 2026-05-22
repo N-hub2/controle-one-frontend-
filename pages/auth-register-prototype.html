@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle One - Inscription Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700;900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/pages/auth-prototype.css">
+  <script src="../scripts/auth-prototype.js" defer></script>
+</head>
+<body class="auth-prototype auth-prototype--register">
+  <div class="auth-prototype__toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+    <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
+    <span class="auth-prototype__toast-copy">
+      <strong>Connexion r&eacute;ussie</strong>
+      <small>Redirection en cours...</small>
+    </span>
+  </div>
+
+  <main class="auth-prototype__desktop auth-prototype__desktop-shell auth-prototype__desktop-shell--register" aria-label="Prototype inscription desktop">
+    <section class="auth-prototype__register-visual" aria-label="Presentation Controle One">
+      <div class="auth-prototype__register-image-layer">
+        <img src="../assets/images/auth/auth-register-visual.png" alt="Abstract automotive tech">
+        <div class="auth-prototype__register-image-gradient" aria-hidden="true"></div>
+        <div class="auth-prototype__pattern-overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="auth-prototype__register-brand auth-prototype__logo-brand">
+        <img src="../assets/logos/Subtract (1) 6.png" alt="Logo Controle One">
+        <span>CONTROLE ONE</span>
+      </div>
+
+      <div class="auth-prototype__register-copy">
+        <h2>La r&eacute;f&eacute;rence pour votre contr&ocirc;le technique.</h2>
+        <div class="auth-prototype__benefit-blocks" aria-label="Avantages Controle One">
+          <div class="auth-prototype__benefit-block">
+            <span class="material-symbols-outlined auth-prototype__icon-fill" aria-hidden="true">search</span>
+            <div>
+              <strong>Recherche Rapide</strong>
+              <p>Trouvez le centre id&eacute;al pr&egrave;s de chez vous en quelques clics.</p>
+            </div>
+          </div>
+          <div class="auth-prototype__benefit-block">
+            <span class="material-symbols-outlined auth-prototype__icon-fill" aria-hidden="true">schedule</span>
+            <div>
+              <strong>R&eacute;servation 24/7</strong>
+              <p>Prenez rendez-vous &agrave; tout moment, de jour comme de nuit.</p>
+            </div>
+          </div>
+          <div class="auth-prototype__benefit-block">
+            <span class="material-symbols-outlined auth-prototype__icon-fill" aria-hidden="true">verified</span>
+            <div>
+              <strong>Centres Agr&eacute;&eacute;s</strong>
+              <p>Un r&eacute;seau de partenaires certifi&eacute;s pour votre s&eacute;curit&eacute;.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="auth-prototype__form-panel auth-prototype__form-panel--register" aria-label="Formulaire d'inscription desktop">
+      <header class="auth-prototype__form-header">
+        <h1>Cr&eacute;er votre compte</h1>
+        <p>R&eacute;servez votre contr&ocirc;le technique plus rapidement avec Controle One.</p>
+      </header>
+
+      <div class="auth-prototype__role-grid" aria-label="Selection de profil">
+        <button class="auth-prototype__role-card auth-prototype__role-card--active" type="button" data-register-role="client" aria-pressed="true">
+          <span class="material-symbols-outlined auth-prototype__role-check auth-prototype__icon-fill" aria-hidden="true">check_circle</span>
+          <span class="auth-prototype__role-icon">
+            <span class="material-symbols-outlined auth-prototype__icon-fill" aria-hidden="true">person</span>
+          </span>
+          <strong>Client</strong>
+          <small>Je veux r&eacute;server un contr&ocirc;le technique</small>
+        </button>
+        <button class="auth-prototype__role-card" type="button" data-register-role="garage" aria-pressed="false">
+          <span class="material-symbols-outlined auth-prototype__role-check auth-prototype__icon-fill" aria-hidden="true">check_circle</span>
+          <span class="auth-prototype__role-icon">
+            <span class="material-symbols-outlined" aria-hidden="true">storefront</span>
+          </span>
+          <strong>Centre partenaire</strong>
+          <small>Je veux g&eacute;rer mes cr&eacute;neaux et r&eacute;servations</small>
+        </button>
+      </div>
+
+      <div class="auth-prototype__register-panel" data-register-panel="client">
+        <form class="auth-prototype__form auth-prototype__form--register-desktop" action="#" method="post" data-auth-flow="client">
+          <div class="auth-prototype__field">
+            <label for="register-full-name-desktop">Pr&eacute;nom et nom</label>
+            <input id="register-full-name-desktop" name="fullName" type="text" placeholder="Jean Dupont" autocomplete="name">
+          </div>
+
+          <div class="auth-prototype__grid-2">
+            <div class="auth-prototype__field">
+              <label for="register-email-desktop">Email</label>
+              <input id="register-email-desktop" name="email" type="email" placeholder="jean@exemple.fr" autocomplete="email">
+            </div>
+            <div class="auth-prototype__field">
+              <label for="register-phone-desktop">T&eacute;l&eacute;phone</label>
+              <input id="register-phone-desktop" name="phone" type="tel" placeholder="06 12 34 56 78" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="auth-prototype__grid-2">
+            <div class="auth-prototype__field">
+              <label for="register-password-desktop">Mot de passe</label>
+              <div class="auth-prototype__input-wrap auth-prototype__input-wrap--no-left-icon">
+                <input id="register-password-desktop" name="password" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" autocomplete="new-password">
+                <button class="auth-prototype__input-action" type="button" aria-label="Afficher ou masquer le mot de passe">
+                  <span class="material-symbols-outlined" aria-hidden="true">visibility_off</span>
+                </button>
+              </div>
+            </div>
+            <div class="auth-prototype__field">
+              <label for="register-confirm-password-desktop">Confirmer le mot de passe</label>
+              <input id="register-confirm-password-desktop" name="confirmPassword" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" autocomplete="new-password">
+            </div>
+          </div>
+
+          <div class="auth-prototype__checkbox-row auth-prototype__checkbox-row--terms">
+            <input id="terms-desktop" name="terms" type="checkbox">
+            <label for="terms-desktop">
+              J'accepte les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de confidentialit&eacute;</a>.
+            </label>
+          </div>
+
+          <button class="auth-prototype__submit" type="submit">
+            Cr&eacute;er mon compte
+            <span class="material-symbols-outlined auth-prototype__icon-fill" aria-hidden="true">arrow_forward</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="auth-prototype__register-panel" data-register-panel="garage" hidden>
+        <form class="auth-prototype__form auth-prototype__garage-wizard" action="#" method="post" data-auth-flow="garage" data-garage-wizard novalidate>
+          <ol class="auth-prototype__wizard-steps" aria-label="Etapes inscription centre partenaire">
+            <li class="is-active" data-step-indicator="1">
+              <button type="button" data-step-jump="1">Responsable</button>
+            </li>
+            <li data-step-indicator="2">
+              <button type="button" data-step-jump="2">Centre</button>
+            </li>
+            <li data-step-indicator="3">
+              <button type="button" data-step-jump="3">Services</button>
+            </li>
+            <li data-step-indicator="4">
+              <button type="button" data-step-jump="4">Confirmation</button>
+            </li>
+          </ol>
+
+          <p class="auth-prototype__wizard-error" data-wizard-error role="alert" hidden></p>
+
+          <section class="auth-prototype__wizard-step is-active" data-step="1" aria-label="Informations du responsable">
+            <h2>Informations du responsable</h2>
+            <div class="auth-prototype__grid-2">
+              <div class="auth-prototype__field">
+                <label for="garage-manager-first-name-desktop">Pr&eacute;nom du responsable</label>
+                <input id="garage-manager-first-name-desktop" name="manager_first_name" data-field="first_name" type="text" autocomplete="given-name">
+              </div>
+              <div class="auth-prototype__field">
+                <label for="garage-manager-last-name-desktop">Nom du responsable</label>
+                <input id="garage-manager-last-name-desktop" name="manager_last_name" data-field="last_name" type="text" autocomplete="family-name">
+              </div>
+            </div>
+            <div class="auth-prototype__grid-2">
+              <div class="auth-prototype__field">
+                <label for="garage-manager-email-desktop">Email de connexion</label>
+                <input id="garage-manager-email-desktop" name="manager_email" data-field="email" type="email" autocomplete="email">
+              </div>
+              <div class="auth-prototype__field">
+                <label for="garage-manager-phone-desktop">T&eacute;l&eacute;phone du responsable</label>
+                <input id="garage-manager-phone-desktop" name="manager_phone" data-field="phone" type="tel" autocomplete="tel">
+              </div>
+            </div>
+            <div class="auth-prototype__grid-2">
+              <div class="auth-prototype__field">
+                <label for="garage-manager-password-desktop">Mot de passe</label>
+                <input id="garage-manager-password-desktop" name="manager_password" data-field="password" type="password" autocomplete="new-password">
+              </div>
+              <div class="auth-prototype__field">
+                <label for="garage-manager-confirm-password-desktop">Confirmer le mot de passe</label>
+                <input id="garage-manager-confirm-password-desktop" name="manager_confirm_password" data-field="confirm_password" type="password" autocomplete="new-password">
+              </div>
+            </div>
+          </section>
+
+          <section class="auth-prototype__wizard-step" data-step="2" aria-label="Informations du centre" hidden>
+            <h2>Informations du centre</h2>
+            <div class="auth-prototype__field">
+              <label for="garage-name-desktop">Nom du centre</label>
+              <input id="garage-name-desktop" name="garage_name" data-field="garage_name" type="text">
+            </div>
+            <div class="auth-prototype__field">
+              <label for="garage-address-desktop">Adresse</label>
+              <input id="garage-address-desktop" name="garage_address" data-field="garage_address" type="text">
+            </div>
+            <div class="auth-prototype__grid-2">
+              <div class="auth-prototype__field">
+                <label for="garage-postal-code-desktop">Code postal</label>
+                <input id="garage-postal-code-desktop" name="garage_postal_code" data-field="garage_postal_code" type="text" inputmode="numeric">
+              </div>
+              <div class="auth-prototype__field">
+                <label for="garage-city-desktop">Ville</label>
+                <input id="garage-city-desktop" name="garage_city" data-field="garage_city" type="text">
+              </div>
+            </div>
+            <div class="auth-prototype__grid-2">
+              <div class="auth-prototype__field">
+                <label for="garage-phone-desktop">T&eacute;l&eacute;phone du centre</label>
+                <input id="garage-phone-desktop" name="garage_phone" data-field="garage_phone" type="tel">
+              </div>
+              <div class="auth-prototype__field">
+                <label for="garage-email-desktop">Email du centre</label>
+                <input id="garage-email-desktop" name="garage_email" data-field="garage_email" type="email">
+              </div>
+            </div>
+            <div class="auth-prototype__field">
+              <label for="garage-description-desktop">Description courte</label>
+              <textarea id="garage-description-desktop" name="garage_description" data-field="garage_description" rows="3"></textarea>
+            </div>
+          </section>
+
+          <section class="auth-prototype__wizard-step" data-step="3" aria-label="Services et tarifs" hidden>
+            <h2>Services et tarifs</h2>
+            <p class="auth-prototype__wizard-helper">Les services disponibles sont charg&eacute;s depuis le backend.</p>
+            <p class="auth-prototype__services-state" data-services-loading hidden>Chargement des services...</p>
+            <p class="auth-prototype__services-state auth-prototype__services-state--error" data-services-error hidden>Impossible de charger les services. V&eacute;rifiez que le backend est lanc&eacute;.</p>
+            <p class="auth-prototype__services-state" data-services-empty hidden>Aucun service disponible pour le moment.</p>
+            <div class="auth-prototype__service-list" data-services-list aria-live="polite"></div>
+          </section>
+
+          <section class="auth-prototype__wizard-step" data-step="4" aria-label="Confirmation" hidden>
+            <h2>Confirmation</h2>
+            <div class="auth-prototype__summary-card">
+              <div>
+                <strong>Responsable</strong>
+                <p data-summary="responsable">-</p>
+              </div>
+              <div>
+                <strong>Centre</strong>
+                <p data-summary="centre">-</p>
+              </div>
+              <div>
+                <strong>Services s&eacute;lectionn&eacute;s</strong>
+                <p data-summary="services">-</p>
+              </div>
+              <div>
+                <strong>Tarifs</strong>
+                <p data-summary="tariffs">-</p>
+              </div>
+            </div>
+            <div class="auth-prototype__checkbox-row auth-prototype__checkbox-row--terms">
+              <input id="garage-terms-desktop" name="garage_terms" data-field="terms" type="checkbox">
+              <label for="garage-terms-desktop">
+                J'accepte les conditions d'inscription centre partenaire.
+              </label>
+            </div>
+            <p class="auth-prototype__endpoint-message" data-endpoint-message hidden>L&rsquo;inscription centre partenaire n&eacute;cessite encore l&rsquo;endpoint backend d&eacute;di&eacute;.</p>
+          </section>
+
+          <div class="auth-prototype__wizard-actions">
+            <button class="auth-prototype__secondary-button" type="button" data-step-prev hidden>Retour</button>
+            <button class="auth-prototype__submit" type="button" data-step-next>Continuer</button>
+            <button class="auth-prototype__submit" type="submit" data-garage-submit hidden>Cr&eacute;er mon espace partenaire</button>
+          </div>
+        </form>
+      </div>
+
+      <p class="auth-prototype__switch-link">
+        D&eacute;j&agrave; inscrit ?
+        <a href="auth-login-prototype.html">Se connecter</a>
+      </p>
+    </section>
+  </main>
+
+  <main class="auth-prototype__mobile auth-prototype__mobile-shell auth-prototype__mobile-shell--register" aria-label="Prototype inscription mobile">
+    <header class="auth-prototype__mobile-topbar auth-prototype__pattern-dark">
+      <div class="auth-prototype__mobile-topbar-row">
+        <h1 class="auth-prototype__logo-brand auth-prototype__logo-brand--topbar">
+          <img src="../assets/logos/Subtract (1) 6.png" alt="Logo Controle One">
+          <span>CONTROLE ONE</span>
+        </h1>
+        <a href="auth-login-prototype.html" aria-label="Fermer">
+          <span class="material-symbols-outlined" aria-hidden="true">close</span>
+        </a>
+      </div>
+      <div class="auth-prototype__mobile-topbar-copy">
+        <h2>La r&eacute;f&eacute;rence pour votre contr&ocirc;le technique.</h2>
+        <div class="auth-prototype__mobile-benefits" aria-label="Avantages Controle One">
+          <div class="auth-prototype__mobile-benefit">
+            <strong>Recherche Rapide</strong>
+            <p>Trouvez le centre id&eacute;al pr&egrave;s de chez vous en quelques clics.</p>
+          </div>
+          <div class="auth-prototype__mobile-benefit">
+            <strong>R&eacute;servation 24/7</strong>
+            <p>Prenez rendez-vous &agrave; tout moment, de jour comme de nuit.</p>
+          </div>
+          <div class="auth-prototype__mobile-benefit">
+            <strong>Centres Agr&eacute;&eacute;s</strong>
+            <p>Un r&eacute;seau de partenaires certifi&eacute;s pour votre s&eacute;curit&eacute;.</p>
+          </div>
+        </div>
+      </div>
+      <div class="auth-prototype__mobile-blur" aria-hidden="true"></div>
+    </header>
+
+    <section class="auth-prototype__mobile-sheet auth-prototype__mobile-sheet--register" aria-label="Formulaire d'inscription mobile">
+      <section class="auth-prototype__role-section">
+        <h3>S&eacute;lectionnez votre profil</h3>
+
+        <label class="auth-prototype__mobile-role">
+          <input name="role-mobile" type="radio" value="client" data-register-role="client" checked>
+          <span class="auth-prototype__mobile-role-card auth-prototype__pattern-light">
+            <span class="auth-prototype__role-icon">
+              <span class="material-symbols-outlined" aria-hidden="true">person</span>
+            </span>
+            <span class="auth-prototype__mobile-role-copy">
+              <strong>Client</strong>
+              <small>Je veux r&eacute;server un contr&ocirc;le technique.</small>
+            </span>
+            <span class="auth-prototype__radio-visual" aria-hidden="true"></span>
+          </span>
+        </label>
+
+        <label class="auth-prototype__mobile-role">
+          <input name="role-mobile" type="radio" value="garage" data-register-role="garage">
+          <span class="auth-prototype__mobile-role-card auth-prototype__pattern-light">
+            <span class="auth-prototype__role-icon auth-prototype__role-icon--muted">
+              <span class="material-symbols-outlined" aria-hidden="true">storefront</span>
+            </span>
+            <span class="auth-prototype__mobile-role-copy">
+              <strong>Centre partenaire</strong>
+              <small>Je veux g&eacute;rer mes cr&eacute;neaux et r&eacute;servations.</small>
+            </span>
+            <span class="auth-prototype__radio-visual" aria-hidden="true"></span>
+          </span>
+        </label>
+      </section>
+
+      <div class="auth-prototype__register-panel" data-register-panel="client">
+        <form class="auth-prototype__form auth-prototype__form--register-mobile" action="#" method="post" data-auth-flow="client">
+          <div class="auth-prototype__field">
+            <label for="register-full-name-mobile">Pr&eacute;nom et nom</label>
+            <input id="register-full-name-mobile" name="fullName" type="text" placeholder="Jean Dupont" autocomplete="name">
+          </div>
+
+          <div class="auth-prototype__field">
+            <label for="register-email-mobile">Email</label>
+            <div class="auth-prototype__input-wrap">
+              <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+              <input id="register-email-mobile" name="email" type="email" placeholder="jean@exemple.fr" autocomplete="email">
+            </div>
+          </div>
+
+          <div class="auth-prototype__field">
+            <label for="register-phone-mobile">T&eacute;l&eacute;phone</label>
+            <input id="register-phone-mobile" name="phone" type="tel" placeholder="06 12 34 56 78" autocomplete="tel">
+          </div>
+
+          <div class="auth-prototype__field">
+            <label for="register-password-mobile">Mot de passe</label>
+            <div class="auth-prototype__input-wrap">
+              <span class="material-symbols-outlined" aria-hidden="true">lock</span>
+              <input id="register-password-mobile" name="password" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" autocomplete="new-password">
+              <button class="auth-prototype__input-action" type="button" aria-label="Afficher ou masquer le mot de passe">
+                <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="auth-prototype__field">
+            <label for="register-confirm-password-mobile">Confirmer le mot de passe</label>
+            <input id="register-confirm-password-mobile" name="confirmPassword" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" autocomplete="new-password">
+          </div>
+
+          <div class="auth-prototype__strength-bars" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="auth-prototype__checkbox-row auth-prototype__checkbox-row--terms">
+            <input id="terms-mobile" name="terms" type="checkbox">
+            <label for="terms-mobile">
+              J'accepte les <a href="#">Conditions G&eacute;n&eacute;rales d'Utilisation</a> et la <a href="#">Politique de Confidentialit&eacute;</a>.
+            </label>
+          </div>
+
+          <button class="auth-prototype__submit auth-prototype__submit--mobile" type="submit">
+            Cr&eacute;er mon compte
+            <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+          </button>
+
+          <p class="auth-prototype__switch-link auth-prototype__switch-link--mobile">
+            D&eacute;j&agrave; un compte ?
+            <a href="auth-login-prototype.html">Se connecter</a>
+          </p>
+        </form>
+      </div>
+
+      <div class="auth-prototype__register-panel" data-register-panel="garage" hidden>
+        <form class="auth-prototype__form auth-prototype__garage-wizard" action="#" method="post" data-auth-flow="garage" data-garage-wizard novalidate>
+          <ol class="auth-prototype__wizard-steps" aria-label="Etapes inscription centre partenaire">
+            <li class="is-active" data-step-indicator="1">
+              <button type="button" data-step-jump="1">Responsable</button>
+            </li>
+            <li data-step-indicator="2">
+              <button type="button" data-step-jump="2">Centre</button>
+            </li>
+            <li data-step-indicator="3">
+              <button type="button" data-step-jump="3">Services</button>
+            </li>
+            <li data-step-indicator="4">
+              <button type="button" data-step-jump="4">Confirmation</button>
+            </li>
+          </ol>
+
+          <p class="auth-prototype__wizard-error" data-wizard-error role="alert" hidden></p>
+
+          <section class="auth-prototype__wizard-step is-active" data-step="1" aria-label="Informations du responsable">
+            <h2>Informations du responsable</h2>
+            <div class="auth-prototype__grid-2 auth-prototype__grid-2--mobile">
+              <div class="auth-prototype__field">
+                <label for="garage-manager-first-name-mobile">Pr&eacute;nom du responsable</label>
+                <input id="garage-manager-first-name-mobile" name="manager_first_name" data-field="first_name" type="text" autocomplete="given-name">
+              </div>
+              <div class="auth-prototype__field">
+                <label for="garage-manager-last-name-mobile">Nom du responsable</label>
+                <input id="garage-manager-last-name-mobile" name="manager_last_name" data-field="last_name" type="text" autocomplete="family-name">
+              </div>
+            </div>
+            <div class="auth-prototype__field">
+              <label for="garage-manager-email-mobile">Email de connexion</label>
+              <input id="garage-manager-email-mobile" name="manager_email" data-field="email" type="email" autocomplete="email">
+            </div>
+            <div class="auth-prototype__field">
+              <label for="garage-manager-phone-mobile">T&eacute;l&eacute;phone du responsable</label>
+              <input id="garage-manager-phone-mobile" name="manager_phone" data-field="phone" type="tel" autocomplete="tel">
+            </div>
+            <div class="auth-prototype__field">
+              <label for="garage-manager-password-mobile">Mot de passe</label>
+              <input id="garage-manager-password-mobile" name="manager_password" data-field="password" type="password" autocomplete="new-password">
+            </div>
+            <div class="auth-prototype__field">
+              <label for="garage-manager-confirm-password-mobile">Confirmer le mot de passe</label>
+              <input id="garage-manager-confirm-password-mobile" name="manager_confirm_password" data-field="confirm_password" type="password" autocomplete="new-password">
+            </div>
+          </section>
+
+          <section class="auth-prototype__wizard-step" data-step="2" aria-label="Informations du centre" hidden>
+            <h2>Informations du centre</h2>
+            <div class="auth-prototype__field">
+              <label for="garage-name-mobile">Nom du centre</label>
+              <input id="garage-name-mobile" name="garage_name" data-field="garage_name" type="text">
+            </div>
+            <div class="auth-prototype__field">
+              <label for="garage-address-mobile">Adresse</label>
+              <input id="garage-address-mobile" name="garage_address" data-field="garage_address" type="text">
+            </div>
+            <div class="auth-prototype__grid-2 auth-prototype__grid-2--mobile">
+              <div class="auth-prototype__field">
+                <label for="garage-postal-code-mobile">Code postal</label>
+                <input id="garage-postal-code-mobile" name="garage_postal_code" data-field="garage_postal_code" type="text" inputmode="numeric">
+              </div>
+              <div class="auth-prototype__field">
+                <label for="garage-city-mobile">Ville</label>
+                <input id="garage-city-mobile" name="garage_city" data-field="garage_city" type="text">
+              </div>
+            </div>
+            <div class="auth-prototype__field">
+              <label for="garage-phone-mobile">T&eacute;l&eacute;phone du centre</label>
+              <input id="garage-phone-mobile" name="garage_phone" data-field="garage_phone" type="tel">
+            </div>
+            <div class="auth-prototype__field">
+              <label for="garage-email-mobile">Email du centre</label>
+              <input id="garage-email-mobile" name="garage_email" data-field="garage_email" type="email">
+            </div>
+            <div class="auth-prototype__field">
+              <label for="garage-description-mobile">Description courte</label>
+              <textarea id="garage-description-mobile" name="garage_description" data-field="garage_description" rows="3"></textarea>
+            </div>
+          </section>
+
+          <section class="auth-prototype__wizard-step" data-step="3" aria-label="Services et tarifs" hidden>
+            <h2>Services et tarifs</h2>
+            <p class="auth-prototype__wizard-helper">Les services disponibles sont charg&eacute;s depuis le backend.</p>
+            <p class="auth-prototype__services-state" data-services-loading hidden>Chargement des services...</p>
+            <p class="auth-prototype__services-state auth-prototype__services-state--error" data-services-error hidden>Impossible de charger les services. V&eacute;rifiez que le backend est lanc&eacute;.</p>
+            <p class="auth-prototype__services-state" data-services-empty hidden>Aucun service disponible pour le moment.</p>
+            <div class="auth-prototype__service-list" data-services-list aria-live="polite"></div>
+          </section>
+
+          <section class="auth-prototype__wizard-step" data-step="4" aria-label="Confirmation" hidden>
+            <h2>Confirmation</h2>
+            <div class="auth-prototype__summary-card">
+              <div>
+                <strong>Responsable</strong>
+                <p data-summary="responsable">-</p>
+              </div>
+              <div>
+                <strong>Centre</strong>
+                <p data-summary="centre">-</p>
+              </div>
+              <div>
+                <strong>Services s&eacute;lectionn&eacute;s</strong>
+                <p data-summary="services">-</p>
+              </div>
+              <div>
+                <strong>Tarifs</strong>
+                <p data-summary="tariffs">-</p>
+              </div>
+            </div>
+            <div class="auth-prototype__checkbox-row auth-prototype__checkbox-row--terms">
+              <input id="garage-terms-mobile" name="garage_terms" data-field="terms" type="checkbox">
+              <label for="garage-terms-mobile">
+                J'accepte les conditions d'inscription centre partenaire.
+              </label>
+            </div>
+            <p class="auth-prototype__endpoint-message" data-endpoint-message hidden>L&rsquo;inscription centre partenaire n&eacute;cessite encore l&rsquo;endpoint backend d&eacute;di&eacute;.</p>
+          </section>
+
+          <div class="auth-prototype__wizard-actions">
+            <button class="auth-prototype__secondary-button" type="button" data-step-prev hidden>Retour</button>
+            <button class="auth-prototype__submit auth-prototype__submit--mobile" type="button" data-step-next>Continuer</button>
+            <button class="auth-prototype__submit auth-prototype__submit--mobile" type="submit" data-garage-submit hidden>Cr&eacute;er mon espace partenaire</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
