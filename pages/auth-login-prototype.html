@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle One - Connexion Prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700;900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/pages/auth-prototype.css">
+  <script src="../scripts/auth-prototype.js" defer></script>
+</head>
+<body class="auth-prototype auth-prototype--login">
+  <div class="auth-prototype__toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+    <span class="material-symbols-outlined" aria-hidden="true">check_circle</span>
+    <span class="auth-prototype__toast-copy">
+      <strong>Connexion r&eacute;ussie</strong>
+      <small>Redirection en cours...</small>
+    </span>
+  </div>
+
+  <main class="auth-prototype__desktop auth-prototype__desktop-shell auth-prototype__desktop-shell--login" aria-label="Prototype connexion desktop">
+    <section class="auth-prototype__desktop-visual auth-prototype__desktop-visual--login" aria-label="Presentation Controle One">
+      <div class="auth-prototype__visual-gradient"></div>
+      <div class="auth-prototype__decor-circle auth-prototype__decor-circle--top"></div>
+      <div class="auth-prototype__decor-circle auth-prototype__decor-circle--bottom"></div>
+
+      <div class="auth-prototype__visual-content">
+        <div class="auth-prototype__brand-text auth-prototype__logo-brand">
+          <img src="../assets/logos/Subtract (1) 6.png" alt="Logo Controle One">
+          <span>CONTROLE ONE</span>
+        </div>
+        <div class="auth-prototype__visual-copy">
+          <h1>R&eacute;servez votre contr&ocirc;le technique en toute simplicit&eacute;</h1>
+          <p>Trouvez un centre, comparez les prix et choisissez votre cr&eacute;neau en quelques clics.</p>
+        </div>
+
+        <ul class="auth-prototype__benefit-list" aria-label="Avantages Controle One">
+          <li>
+            <span class="material-symbols-outlined auth-prototype__icon-fill" aria-hidden="true">check_circle</span>
+            <span>Centres certifi&eacute;s</span>
+          </li>
+          <li>
+            <span class="material-symbols-outlined auth-prototype__icon-fill" aria-hidden="true">check_circle</span>
+            <span>Prix transparents</span>
+          </li>
+          <li>
+            <span class="material-symbols-outlined auth-prototype__icon-fill" aria-hidden="true">check_circle</span>
+            <span>R&eacute;servation rapide</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="auth-prototype__form-panel auth-prototype__form-panel--login" aria-label="Formulaire de connexion desktop">
+      <div class="auth-prototype__form-container auth-prototype__form-container--login">
+        <header class="auth-prototype__form-header">
+          <h2>Bon retour sur Controle One</h2>
+          <p>Connectez-vous pour g&eacute;rer vos rendez-vous ou r&eacute;server un cr&eacute;neau.</p>
+        </header>
+
+        <form class="auth-prototype__form" action="#" method="post" data-auth-flow="login">
+          <div class="auth-prototype__field">
+            <label for="login-email-desktop">Email</label>
+            <div class="auth-prototype__input-wrap">
+              <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+              <input id="login-email-desktop" name="email" type="email" placeholder="nom@exemple.fr" autocomplete="email">
+            </div>
+          </div>
+
+          <div class="auth-prototype__field">
+            <label for="login-password-desktop">Mot de passe</label>
+            <div class="auth-prototype__input-wrap">
+              <span class="material-symbols-outlined" aria-hidden="true">lock</span>
+              <input id="login-password-desktop" name="password" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" autocomplete="current-password">
+              <button class="auth-prototype__input-action" type="button" aria-label="Afficher ou masquer le mot de passe">
+                <span class="material-symbols-outlined" aria-hidden="true">visibility_off</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="auth-prototype__options-row">
+            <div class="auth-prototype__checkbox-row">
+              <input id="remember-me-desktop" name="remember-me" type="checkbox">
+              <label for="remember-me-desktop">Se souvenir de moi</label>
+            </div>
+            <a href="#">Mot de passe oubli&eacute; ?</a>
+          </div>
+
+          <button class="auth-prototype__submit" type="submit">Se connecter</button>
+        </form>
+
+        <p class="auth-prototype__switch-link">
+          Pas encore de compte ?
+          <a href="auth-register-prototype.html">Cr&eacute;er un compte</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <main class="auth-prototype__mobile auth-prototype__mobile-shell auth-prototype__mobile-shell--login" aria-label="Prototype connexion mobile">
+    <header class="auth-prototype__mobile-hero auth-prototype__mobile-hero--login">
+      <div class="auth-prototype__mobile-hero-image" aria-hidden="true"></div>
+      <div class="auth-prototype__mobile-hero-gradient" aria-hidden="true"></div>
+      <div class="auth-prototype__mobile-brand">
+        <h1 class="auth-prototype__logo-brand auth-prototype__logo-brand--mobile">
+          <img src="../assets/logos/Subtract (1) 6.png" alt="Logo Controle One">
+          <span>CONTROLE ONE</span>
+        </h1>
+        <p>Plateforme de gestion automobile haute densit&eacute;.</p>
+      </div>
+    </header>
+
+    <section class="auth-prototype__mobile-sheet auth-prototype__mobile-sheet--login" aria-label="Formulaire de connexion mobile">
+      <div class="auth-prototype__sheet-handle" aria-hidden="true"></div>
+
+      <header class="auth-prototype__form-header">
+        <h2>Se connecter</h2>
+        <p>Saisissez vos identifiants professionnels pour acc&eacute;der &agrave; votre tableau de bord.</p>
+      </header>
+
+      <form class="auth-prototype__form auth-prototype__form--mobile-login" action="#" method="post" data-auth-flow="login">
+        <div class="auth-prototype__field">
+          <label for="login-email-mobile">Adresse e-mail professionnelle</label>
+          <div class="auth-prototype__input-wrap auth-prototype__input-wrap--large">
+            <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+            <input id="login-email-mobile" name="email" type="email" placeholder="nom@entreprise.com" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="auth-prototype__field">
+          <div class="auth-prototype__label-row">
+            <label for="login-password-mobile">Mot de passe</label>
+            <a href="#">Mot de passe oubli&eacute; ?</a>
+          </div>
+          <div class="auth-prototype__input-wrap auth-prototype__input-wrap--large">
+            <span class="material-symbols-outlined" aria-hidden="true">lock</span>
+            <input id="login-password-mobile" name="password" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" autocomplete="current-password" required>
+          </div>
+        </div>
+
+        <button class="auth-prototype__submit auth-prototype__submit--mobile" type="submit">
+          Connexion s&eacute;curis&eacute;e
+          <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+        </button>
+
+        <div class="auth-prototype__divider" aria-hidden="true">
+          <span></span>
+          <small>Ou</small>
+          <span></span>
+        </div>
+
+        <button class="auth-prototype__secondary-button" type="button">
+          <span class="material-symbols-outlined" aria-hidden="true">corporate_fare</span>
+          Connexion via SSO Entreprise
+        </button>
+      </form>
+
+      <p class="auth-prototype__switch-link auth-prototype__switch-link--mobile">
+        Vous n'avez pas de compte ?
+        <a href="auth-register-prototype.html">Demander un acc&egrave;s</a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>
