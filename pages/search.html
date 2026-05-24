@@ -22,30 +22,12 @@
       <button type="submit" class="button primary-button">Search</button>
     </form>
 
-    <section class="result-grid" aria-label="Center list">
-      <article class="card center-card">
-        <h2>Auto Bilan Paris 15</h2>
-        <p>Price: 78€</p>
-        <p>Slots: 09:30, 11:00, 14:00</p>
-        <a class="button primary-button" href="booking.html?center=Auto%20Bilan%20Paris%2015">Book</a>
-      </article>
+    <p class="search-state card" data-search-state role="status" aria-live="polite" hidden></p>
 
-      <article class="card center-card">
-        <h2>Controle Tech Lyon Est</h2>
-        <p>Price: 74€</p>
-        <p>Slots: 10:00, 13:30, 16:00</p>
-        <a class="button primary-button" href="booking.html?center=Controle%20Tech%20Lyon%20Est">Book</a>
-      </article>
-
-      <article class="card center-card">
-        <h2>Securitest Marseille Sud</h2>
-        <p>Price: 80€</p>
-        <p>Slots: 08:45, 12:15, 15:30</p>
-        <a class="button primary-button" href="booking.html?center=Securitest%20Marseille%20Sud">Book</a>
-      </article>
-    </section>
+    <section class="result-grid" data-search-results aria-label="Center list"></section>
   </main>
 
   <script src="../scripts/main.js" defer></script>
+  <script type="module" src="../scripts/search.js" defer></script>
 </body>
 </html>

@@ -9,7 +9,33 @@
   margin-top: 1rem;
 }
 
+.search-state {
+  margin-top: 1rem;
+}
+
+.search-state[hidden] {
+  display: none;
+}
+
+.search-state--error,
+.search-state--invalid {
+  border: 1px solid rgba(186, 26, 26, 0.24);
+  color: #93000a;
+}
+
+.search-state--empty,
+.search-state--loading {
+  color: var(--color-text-muted);
+}
+
 .center-card {
   display: grid;
   gap: 0.75rem;
+}
+
+.center-card__address,
+.center-card__description,
+.center-card__meta,
+.center-card__contact {
+  color: var(--color-text-muted);
 }

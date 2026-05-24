@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://api.controle-one.fr';
+const API_BASE_URL = 'http://localhost:5000/api';
 
 async function request(endpoint, options = {}) {
   const response = await fetch(`${API_BASE_URL}${endpoint}`, options);
