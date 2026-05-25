@@ -13,21 +13,30 @@
       <form id="register-form" novalidate>
         <div class="form-field">
           <label for="register-name">Full name</label>
-          <input id="register-name" class="input-control" type="text" required>
+          <input id="register-name" name="fullName" class="input-control" type="text" autocomplete="name" required>
         </div>
         <div class="form-field">
           <label for="register-email">Email</label>
-          <input id="register-email" class="input-control" type="email" required>
+          <input id="register-email" name="email" class="input-control" type="email" autocomplete="email" required>
+        </div>
+        <div class="form-field">
+          <label for="register-phone">Phone</label>
+          <input id="register-phone" name="phone" class="input-control" type="tel" autocomplete="tel" required>
         </div>
         <div class="form-field">
           <label for="register-password">Password</label>
-          <input id="register-password" class="input-control" type="password" required>
+          <input id="register-password" name="password" class="input-control" type="password" autocomplete="new-password" required>
         </div>
+        <div class="form-field">
+          <label for="register-confirm-password">Confirm password</label>
+          <input id="register-confirm-password" name="confirmPassword" class="input-control" type="password" autocomplete="new-password" required>
+        </div>
+        <p class="auth-message" data-auth-message role="alert" hidden></p>
         <button type="submit" class="button primary-button">Create account</button>
       </form>
       <p>Already registered? <a href="login.html">Login</a></p>
     </section>
   </main>
-  <script src="../scripts/main.js" defer></script>
+  <script type="module" src="../scripts/auth.js"></script>
 </body>
 </html>

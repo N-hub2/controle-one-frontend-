@@ -13,17 +13,18 @@
       <form id="login-form" novalidate>
         <div class="form-field">
           <label for="login-email">Email</label>
-          <input id="login-email" class="input-control" type="email" required>
+          <input id="login-email" name="email" class="input-control" type="email" autocomplete="email" required>
         </div>
         <div class="form-field">
           <label for="login-password">Password</label>
-          <input id="login-password" class="input-control" type="password" required>
+          <input id="login-password" name="password" class="input-control" type="password" autocomplete="current-password" required>
         </div>
+        <p class="auth-message" data-auth-message role="alert" hidden></p>
         <button type="submit" class="button primary-button">Login</button>
       </form>
       <p>No account? <a href="register.html">Register</a></p>
     </section>
   </main>
-  <script src="../scripts/main.js" defer></script>
+  <script type="module" src="../scripts/auth.js"></script>
 </body>
 </html>
