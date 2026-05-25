@@ -10,20 +10,62 @@
   <main class="page page-booking container">
     <h1>Book your appointment</h1>
 
-    <article class="card">
-      <h2>Selected center</h2>
-      <p id="selected-center">No center selected</p>
+    <p class="booking-state" data-booking-state role="status" hidden></p>
+
+    <article class="card booking-garage" data-garage-card aria-live="polite">
+      <h2>Garage sélectionné</h2>
+      <p id="selected-garage">Chargement du garage...</p>
+      <p class="booking-garage__address" data-garage-address></p>
+      <p class="booking-garage__description" data-garage-description></p>
+      <p class="booking-garage__contact" data-garage-contact></p>
     </article>
 
     <form id="booking-form" class="card booking-form" novalidate>
+      <section class="booking-section" aria-labelledby="booking-service-title">
+        <h2 id="booking-service-title">Service</h2>
+        <p class="booking-helper" data-service-helper>Sélectionnez un service pour cette réservation.</p>
+        <div class="booking-service-list" data-service-list></div>
+      </section>
+
+      <section class="booking-section" aria-labelledby="booking-slot-title">
+        <h2 id="booking-slot-title">Créneau disponible</h2>
+        <p class="booking-helper" data-slots-helper>Chargement des créneaux...</p>
+        <div class="booking-slot-list" data-slots-list></div>
+      </section>
+
+      <section class="booking-section" aria-labelledby="booking-vehicle-title">
+        <h2 id="booking-vehicle-title">Véhicule</h2>
+        <div class="booking-form__grid">
+          <div class="form-field">
+            <label for="vehicle-registration">Immatriculation</label>
+            <input id="vehicle-registration" name="vehicle_registration" class="input-control" type="text" autocomplete="off" required>
+          </div>
+          <div class="form-field">
+            <label for="vehicle-make">Marque</label>
+            <input id="vehicle-make" name="vehicle_make" class="input-control" type="text" autocomplete="organization" required>
+          </div>
+          <div class="form-field">
+            <label for="vehicle-model">Modèle</label>
+            <input id="vehicle-model" name="vehicle_model" class="input-control" type="text" required>
+          </div>
+          <div class="form-field">
+            <label for="vehicle-year">Année</label>
+            <input id="vehicle-year" name="vehicle_year" class="input-control" type="number" inputmode="numeric" min="1900" max="2100">
+          </div>
+          <div class="form-field booking-form__wide">
+            <label for="vehicle-version">Version</label>
+            <input id="vehicle-version" name="vehicle_version" class="input-control" type="text">
+          </div>
+        </div>
+      </section>
+
       <div class="form-field">
-        <label for="booking-date">Date</label>
-        <input id="booking-date" class="input-control" type="date" required>
+        <p class="booking-feedback" data-booking-feedback role="alert" hidden></p>
       </div>
-      <button type="submit" class="button primary-button">Confirm booking</button>
+      <button type="submit" class="button primary-button" data-booking-submit disabled>Confirmer la réservation</button>
     </form>
   </main>
 
-  <script src="../scripts/main.js" defer></script>
+  <script type="module" src="../scripts/booking.js"></script>
 </body>
 </html>
