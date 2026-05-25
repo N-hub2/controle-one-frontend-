@@ -7,22 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     selectedCenterElement.textContent = selectedCenterFromUrl;
   }
 
-  const loginForm = document.getElementById('login-form');
-  if (loginForm) {
-    loginForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      window.location.href = 'user-dashboard.html';
-    });
-  }
-
-  const registerForm = document.getElementById('register-form');
-  if (registerForm) {
-    registerForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      window.location.href = 'login.html';
-    });
-  }
-
   const bookingForm = document.getElementById('booking-form');
   if (bookingForm) {
     bookingForm.addEventListener('submit', (event) => {
