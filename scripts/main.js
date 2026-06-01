@@ -1,17 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const dashboardCenter = document.getElementById('dashboard-center');
-  const dashboardDate = document.getElementById('dashboard-date');
-  if (dashboardCenter && dashboardDate) {
-    const storedCenter = localStorage.getItem('bookingCenter');
-    const storedDate = localStorage.getItem('bookingDate');
-    if (storedCenter) {
-      dashboardCenter.textContent = storedCenter;
-    }
-    if (storedDate) {
-      dashboardDate.textContent = `Date: ${storedDate}`;
-    }
-  }
-
   const stepItems = Array.from(document.querySelectorAll('.steps-list .glass-step'));
   if (stepItems.length) {
     const defaultImg = document.getElementById('step-img-default');
