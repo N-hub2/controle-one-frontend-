@@ -8,16 +8,18 @@
 </head>
 <body>
   <main class="page page-user-dashboard container">
-    <h1>Your bookings</h1>
+    <header class="dashboard-user__header">
+      <div>
+        <h1>Vos réservations</h1>
+        <p>Retrouvez vos rendez-vous de contrôle technique et leur statut.</p>
+      </div>
+      <a href="search.html" class="button primary-button">Nouvelle réservation</a>
+    </header>
 
-    <article class="card">
-      <h2 id="dashboard-center">Auto Bilan Paris 15</h2>
-      <p id="dashboard-date">Date: 2026-03-20</p>
-      <p>Status: Confirmed</p>
-    </article>
+    <p class="dashboard-user__state" data-dashboard-state role="status">Chargement de vos réservations...</p>
 
-    <a href="search.html" class="button primary-button">Book another center</a>
+    <section class="dashboard-user__list" data-reservations-list aria-live="polite"></section>
   </main>
-  <script src="../scripts/main.js" defer></script>
+  <script type="module" src="../scripts/user-dashboard.js"></script>
 </body>
 </html>
