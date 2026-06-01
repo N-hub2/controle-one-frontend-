@@ -1,7 +1,118 @@
 .page-user-dashboard {
   padding: 2rem 0;
+  display: grid;
+  gap: 1rem;
 }
 
 .page-user-dashboard .card {
   margin: 1rem 0;
+}
+
+.dashboard-user__header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard-user__header p,
+.dashboard-user__meta,
+.dashboard-user__reservation-header p,
+.dashboard-user__detail-section p {
+  color: var(--color-text-muted);
+}
+
+.dashboard-user__list {
+  display: grid;
+  gap: 1rem;
+}
+
+.dashboard-user__state {
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+.dashboard-user__state--auth,
+.dashboard-user__state--error,
+.dashboard-user__state--forbidden {
+  color: #b42318;
+}
+
+.dashboard-user__state--success {
+  color: #067647;
+}
+
+.dashboard-user__login-link {
+  margin-top: 0.75rem;
+}
+
+.dashboard-user__reservation {
+  display: grid;
+  gap: 1rem;
+}
+
+.dashboard-user__reservation-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.dashboard-user__reservation-header h2,
+.dashboard-user__reservation-header p,
+.dashboard-user__detail-section h3,
+.dashboard-user__detail-section p,
+.dashboard-user__meta {
+  margin: 0;
+}
+
+.dashboard-user__status {
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.dashboard-user__status--cancelled {
+  background: #fee4e2;
+  color: #b42318;
+}
+
+.dashboard-user__status--completed {
+  background: #dcfae6;
+  color: #067647;
+}
+
+.dashboard-user__details {
+  display: grid;
+  gap: 1rem;
+}
+
+.dashboard-user__detail-section {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.dashboard-user__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dashboard-user__actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+@media (min-width: 768px) {
+  .dashboard-user__details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
