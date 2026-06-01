@@ -13,25 +13,34 @@
       <nav class="top-nav" aria-label="Navigation principale">
         <a href="garage-dashboard.html">Espace centre</a>
         <a href="search.html">Vue recherche</a>
-        <a href="login.html">Déconnexion</a>
+        <a href="login.html" data-logout>Déconnexion</a>
       </nav>
     </div>
   </header>
 
-  <main class="page page-garage-dashboard">
-    <section class="container">
-      <h1>Tableau de bord centre</h1>
+  <main class="page page-garage-dashboard container">
+    <header class="garage-dashboard__header">
+      <div>
+        <h1>Tableau de bord centre</h1>
+        <p>Suivez les réservations de votre centre et confirmez les demandes en attente.</p>
+      </div>
+    </header>
+
+    <p class="garage-dashboard__state" data-garage-dashboard-state role="status">Chargement des réservations...</p>
+
+    <section class="garage-dashboard__summary" data-garage-dashboard-summary hidden>
       <article class="card">
-        <h2>Réservations du jour</h2>
-        <p>09:30 - Validée</p>
-        <p>11:00 - En attente</p>
+        <h2>Réservations</h2>
+        <p data-garage-summary-count>0 réservation</p>
       </article>
       <article class="card">
-        <h2>Disponibilités</h2>
-        <p>Créneaux restants: 3</p>
+        <h2>En attente</h2>
+        <p data-garage-summary-pending>0 demande</p>
       </article>
     </section>
+
+    <section class="garage-dashboard__list" data-garage-reservations-list aria-live="polite"></section>
   </main>
-  <script src="../scripts/main.js" defer></script>
+  <script type="module" src="../scripts/garage-dashboard.js"></script>
 </body>
 </html>
