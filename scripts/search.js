@@ -1,4 +1,8 @@
-import { API_BASE_URL } from './api.js';
+import { request } from './api.js';
+
+if (['localhost', '127.0.0.1'].includes(window.location.hostname)) {
+  window.CONTROLE_ONE_API_BASE_URL = 'http://localhost:5000';
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const resultsContainer = document.querySelector('[data-search-results]');
@@ -71,14 +75,8 @@ async function loadGarages(query, serviceId, stateMessage, resultsContainer) {
 
   try {
     const queryString = query.toString();
-    const endpoint = `${API_BASE_URL}/search/garages${queryString ? `?${queryString}` : ''}`;
-    const response = await fetch(endpoint);
-
-    if (!response.ok) {
-      throw new Error('search_request_failed');
-    }
-
-    const payload = await response.json();
+    const endpoint = `/search/garages${queryString ? `?${queryString}` : ''}`;
+    const payload = await request(endpoint);
 
     if (!payload || payload.success === false || !payload.data || !Array.isArray(payload.data.garages)) {
       showState(stateMessage, resultsContainer, 'error', 'Impossible de charger les résultats pour le moment.');
