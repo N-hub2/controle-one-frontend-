@@ -24,6 +24,24 @@
   max-width: 460px;
 }
 
+.page-contact .contact-message {
+  margin: 0 0 0.75rem;
+  padding: 0.65rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.page-contact .contact-message--success {
+  background: rgba(213, 245, 226, 0.9);
+  color: #1f6a43;
+}
+
+.page-contact .contact-message--error {
+  background: rgba(255, 228, 228, 0.9);
+  color: #9b2c2c;
+}
+
 @media (max-width: 900px) {
   .page-contact .question-card {
     right: 2rem;
