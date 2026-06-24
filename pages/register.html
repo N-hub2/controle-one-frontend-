@@ -1,42 +1,114 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register - Controle One</title>
-  <link rel="stylesheet" href="../styles/main.css">
+  <title>Inscription - Controle One</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700;900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/pages/auth-prototype.css">
+  <link rel="stylesheet" href="../styles/pages/auth.css">
 </head>
-<body>
-  <main class="page page-register container">
-    <section class="auth-box card">
-      <h1>Register</h1>
-      <form id="register-form" novalidate>
-        <div class="form-field">
-          <label for="register-name">Full name</label>
-          <input id="register-name" name="fullName" class="input-control" type="text" autocomplete="name" required>
+<body class="auth-prototype auth-prototype--register auth-real">
+  <main class="auth-prototype__desktop-shell auth-prototype__desktop-shell--register auth-real__shell auth-real__shell--register" aria-label="Inscription Controle One">
+    <section class="auth-prototype__register-visual" aria-label="Presentation Controle One">
+      <div class="auth-prototype__register-image-layer">
+        <img src="../assets/images/auth/auth-register-visual.png" alt="Controle technique automobile">
+        <div class="auth-prototype__register-image-gradient" aria-hidden="true"></div>
+        <div class="auth-prototype__pattern-overlay" aria-hidden="true"></div>
+      </div>
+
+      <a class="auth-prototype__register-brand auth-prototype__logo-brand auth-real__brand-link" href="../index.html" aria-label="Retour a l'accueil Controle One">
+        <img src="../assets/logos/Subtract (1) 6.png" alt="Logo Controle One">
+        <span>CONTROLE ONE</span>
+      </a>
+
+      <div class="auth-prototype__register-copy">
+        <h2>La r&eacute;f&eacute;rence pour votre contr&ocirc;le technique.</h2>
+        <div class="auth-prototype__benefit-blocks" aria-label="Avantages Controle One">
+          <div class="auth-prototype__benefit-block">
+            <span class="material-symbols-outlined auth-prototype__icon-fill" aria-hidden="true">search</span>
+            <div>
+              <strong>Recherche Rapide</strong>
+              <p>Trouvez le centre id&eacute;al pr&egrave;s de chez vous en quelques clics.</p>
+            </div>
+          </div>
+          <div class="auth-prototype__benefit-block">
+            <span class="material-symbols-outlined auth-prototype__icon-fill" aria-hidden="true">schedule</span>
+            <div>
+              <strong>R&eacute;servation 24/7</strong>
+              <p>Prenez rendez-vous &agrave; tout moment, de jour comme de nuit.</p>
+            </div>
+          </div>
+          <div class="auth-prototype__benefit-block">
+            <span class="material-symbols-outlined auth-prototype__icon-fill" aria-hidden="true">verified</span>
+            <div>
+              <strong>Centres Agr&eacute;&eacute;s</strong>
+              <p>Un r&eacute;seau de partenaires certifi&eacute;s pour votre s&eacute;curit&eacute;.</p>
+            </div>
+          </div>
         </div>
-        <div class="form-field">
-          <label for="register-email">Email</label>
-          <input id="register-email" name="email" class="input-control" type="email" autocomplete="email" required>
+      </div>
+    </section>
+
+    <section class="auth-prototype__form-panel auth-prototype__form-panel--register" aria-label="Formulaire d'inscription">
+      <a class="auth-real__home-link" href="../index.html">Retour &agrave; l'accueil</a>
+
+      <header class="auth-prototype__form-header">
+        <h1>Cr&eacute;er votre compte</h1>
+        <p>R&eacute;servez votre contr&ocirc;le technique plus rapidement avec Controle One.</p>
+      </header>
+
+      <div class="auth-real__role-note" aria-label="Profil client">
+        <span class="material-symbols-outlined auth-prototype__icon-fill" aria-hidden="true">person</span>
+        <div>
+          <strong>Compte client</strong>
+          <small>Inscription client connect&eacute;e au backend Controle One.</small>
         </div>
-        <div class="form-field">
-          <label for="register-phone">Phone</label>
-          <input id="register-phone" name="phone" class="input-control" type="tel" autocomplete="tel" required>
+      </div>
+
+      <form id="register-form" class="auth-prototype__form auth-prototype__form--register-desktop" action="#" method="post" novalidate>
+        <div class="auth-prototype__field">
+          <label for="register-name">Pr&eacute;nom et nom</label>
+          <input id="register-name" name="fullName" type="text" placeholder="Jean Dupont" autocomplete="name" required>
         </div>
-        <div class="form-field">
-          <label for="register-password">Password</label>
-          <input id="register-password" name="password" class="input-control" type="password" autocomplete="new-password" required>
+
+        <div class="auth-prototype__grid-2">
+          <div class="auth-prototype__field">
+            <label for="register-email">Email</label>
+            <input id="register-email" name="email" type="email" placeholder="jean@exemple.fr" autocomplete="email" required>
+          </div>
+          <div class="auth-prototype__field">
+            <label for="register-phone">T&eacute;l&eacute;phone</label>
+            <input id="register-phone" name="phone" type="tel" placeholder="06 12 34 56 78" autocomplete="tel" required>
+          </div>
         </div>
-        <div class="form-field">
-          <label for="register-confirm-password">Confirm password</label>
-          <input id="register-confirm-password" name="confirmPassword" class="input-control" type="password" autocomplete="new-password" required>
+
+        <div class="auth-prototype__grid-2">
+          <div class="auth-prototype__field">
+            <label for="register-password">Mot de passe</label>
+            <input id="register-password" name="password" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" autocomplete="new-password" required>
+          </div>
+          <div class="auth-prototype__field">
+            <label for="register-confirm-password">Confirmer le mot de passe</label>
+            <input id="register-confirm-password" name="confirmPassword" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" autocomplete="new-password" required>
+          </div>
         </div>
+
         <p class="auth-message" data-auth-message role="alert" hidden></p>
-        <button type="submit" class="button primary-button">Create account</button>
+
+        <button class="auth-prototype__submit" type="submit">Cr&eacute;er mon compte</button>
       </form>
-      <p>Already registered? <a href="login.html">Login</a></p>
+
+      <p class="auth-prototype__switch-link">
+        D&eacute;j&agrave; inscrit ?
+        <a href="login.html">Se connecter</a>
+      </p>
     </section>
   </main>
+
   <script type="module" src="../scripts/auth.js"></script>
 </body>
 </html>

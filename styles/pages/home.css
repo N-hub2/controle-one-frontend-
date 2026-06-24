@@ -192,69 +192,54 @@
 }
 
 .hero-search-panel {
-  background:
-    linear-gradient(104deg, rgba(255, 255, 255, 0.76) 0%, rgba(255, 255, 255, 0.68) 58%, rgba(248, 249, 252, 0.54) 79%, rgba(244, 245, 249, 0.38) 100%);
-  border: 1px solid rgba(170, 172, 182, 0.36);
-  border-left: 0;
-  border-radius: 0 0 42px 0;
-  clip-path: polygon(
-    0 0,
-    calc(100% - 56px) 0,
-    calc(100% - 47px) 5px,
-    calc(100% - 38px) 14px,
-    100% calc(100% - 32px),
-    calc(100% - 3px) calc(100% - 21px),
-    calc(100% - 10px) calc(100% - 11px),
-    calc(100% - 24px) calc(100% - 3px),
-    calc(100% - 34px) 100%,
-    0 100%
-  );
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.62),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.2),
-    0 2px 20px rgba(0, 0, 0, 0.035);
-  filter: drop-shadow(16px -7px 30px rgba(0, 0, 0, 0.08));
-  min-height: 250px;
-  padding: 2.25rem 1.85rem 1.24rem clamp(3rem, 4.6vw, 5.25rem);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  isolation: isolate;
+  margin-left: clamp(-9rem, -7.5vw, -5.25rem);
+  min-height: clamp(220px, 18.93vw, 269px);
+  overflow: hidden;
+  padding: clamp(2rem, 2.4vw, 2.65rem) clamp(1.35rem, 3.3vw, 3.1rem) clamp(1.45rem, 2vw, 2.15rem) clamp(10rem, 13.4vw, 12.95rem);
   position: relative;
-  backdrop-filter: blur(22px) saturate(1.06);
-  -webkit-backdrop-filter: blur(22px) saturate(1.06);
-  width: min(1535px, 85.4vw);
+  width: min(1520px, calc(100vw + 96px));
+}
+
+.hero-search-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(105deg, rgba(255, 255, 255, 0.28), rgba(236, 240, 255, 0.2) 58%, rgba(255, 255, 255, 0.14));
+  backdrop-filter: blur(24px) saturate(1.14);
+  -webkit-backdrop-filter: blur(24px) saturate(1.14);
+  clip-path: polygon(0 0, 94.84% 0, 95.97% 2.6%, 100% calc(100% - 18px), calc(100% - 1px) 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 94.84% 0, 95.97% 2.6%, 100% calc(100% - 18px), calc(100% - 1px) 100%, 0 100%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero-search-panel::after {
   content: "";
   position: absolute;
   inset: 0;
+  --search-frame-color: rgba(113, 117, 126, 0.62);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.07) 46%, transparent 76%),
-    linear-gradient(104deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.18) 74%, rgba(255, 255, 255, 0.06) 100%);
-  clip-path: inherit;
+    linear-gradient(var(--search-frame-color) 0 0) left top / 94.84% 1px no-repeat,
+    linear-gradient(var(--search-frame-color) 0 0) left bottom / calc(100% - 1px) 1px no-repeat,
+    linear-gradient(var(--search-frame-color) 0 0) left top / 1px 100% no-repeat,
+    linear-gradient(to bottom left, transparent calc(50% - 0.5px), var(--search-frame-color) 50%, transparent calc(50% + 0.5px)) left 94.84% top 0 / 1.13% 2.6% no-repeat,
+    linear-gradient(to bottom left, transparent calc(50% - 0.5px), var(--search-frame-color) 50%, transparent calc(50% + 0.5px)) left 95.97% top 2.6% / 4.03% calc(100% - 20.6px) no-repeat,
+    linear-gradient(to bottom left, transparent calc(50% - 0.5px), var(--search-frame-color) 50%, transparent calc(50% + 0.5px)) right 0 bottom 0 / 2px 18px no-repeat;
   pointer-events: none;
-  border-radius: inherit;
-}
-
-.hero-search-panel::before {
-  content: "";
-  position: absolute;
-  right: -0.2rem;
-  top: -3.1rem;
-  width: min(42vw, 720px);
-  height: 205px;
-  background:
-    radial-gradient(ellipse at 58% 58%, rgba(20, 20, 22, 0.11) 0%, rgba(32, 32, 36, 0.07) 42%, rgba(48, 48, 54, 0.028) 70%, transparent 90%);
-  filter: blur(58px);
-  opacity: 0.72;
-  pointer-events: none;
-  transform: skewX(-7deg);
-  z-index: 0;
+  z-index: 2;
 }
 
 .hero-search-panel h2,
 .hero-search-panel > p,
 .hero-search {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-search-panel h2 {
@@ -279,23 +264,14 @@
 
 .hero-search {
   display: grid;
-  grid-template-columns:
-    minmax(155px, 180px)
-    clamp(18px, 1.5vw, 28px)
-    minmax(214px, 258px)
-    clamp(15px, 1vw, 20px)
-    20px
-    clamp(14px, 1vw, 18px)
-    minmax(470px, 704px)
-    clamp(22px, 1.55vw, 30px)
-    minmax(150px, 174px);
-  column-gap: 0;
+  grid-template-columns: minmax(170px, 220px) minmax(220px, 292px) minmax(145px, 172px);
+  gap: clamp(0.85rem, 1.4vw, 1.35rem);
   align-items: end;
   background: transparent;
   border: 0;
   box-shadow: none;
   margin: 0;
-  max-width: 1422px;
+  max-width: 782px;
   padding: 0;
   width: 100%;
 }
@@ -305,7 +281,7 @@
 }
 
 .search-field--plate {
-  grid-column: 3;
+  grid-column: 2;
 }
 
 .search-field {
@@ -314,8 +290,7 @@
   min-width: 0;
 }
 
-.search-field label,
-.vehicle-details legend {
+.search-field label {
   color: #575757;
   font-size: 0.98rem;
   font-weight: 500;
@@ -329,14 +304,14 @@
 .search-field select {
   width: 100%;
   height: 58px;
-  border: 1px solid rgba(101, 117, 255, 0.64);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(101, 117, 255, 0.54);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
   color: #2f2f2f;
   font-size: 1.04rem;
   font-weight: 400;
   letter-spacing: 0;
-  padding: 0.72rem 0.8rem;
+  padding: 0.72rem 0.95rem;
 }
 
 .search-field input::placeholder {
@@ -346,87 +321,21 @@
 
 .search-field--postal input,
 .search-field--plate input {
-  color: #a9a9a9;
-  font-size: 1.18rem;
+  color: #2f2f2f;
+  font-size: 1.08rem;
   font-weight: 500;
-  text-align: center;
-}
-
-.search-separator {
-  align-self: end;
-  color: #4f4f4f;
-  display: inline-flex;
-  grid-column: 5;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 58px;
-  height: 58px;
-}
-
-.vehicle-details {
-  border: 0;
-  display: block;
-  grid-column: 7;
-  margin: 0;
-  min-width: 0;
-  padding: 0;
-}
-
-.vehicle-details legend {
-  margin: 0 0 0.7rem;
-}
-
-.vehicle-detail-grid {
-  border: 1px solid rgba(101, 117, 255, 0.64);
-  border-radius: 6px;
-  display: grid;
-  grid-template-columns: 1.08fr 1.08fr 0.78fr 0.78fr;
-  overflow: hidden;
-}
-
-.vehicle-detail-grid .search-field {
-  display: block;
-}
-
-.vehicle-detail-grid .search-field:not(:last-child) {
-  border-right: 1px solid rgba(101, 117, 255, 0.56);
-}
-
-.vehicle-detail-grid input,
-.vehicle-detail-grid select {
-  border: 0;
-  border-radius: 0;
-  color: #9f9f9f;
-  font-weight: 400;
-  height: 58px;
-  padding-inline: 0.8rem;
-}
-
-.vehicle-detail-grid select {
-  appearance: none;
-  background-image:
-    linear-gradient(45deg, transparent 50%, #111111 50%),
-    linear-gradient(135deg, #111111 50%, transparent 50%);
-  background-position:
-    calc(100% - 18px) 50%,
-    calc(100% - 13px) 50%;
-  background-repeat: no-repeat;
-  background-size: 5px 5px, 5px 5px;
-  padding-right: 2.15rem;
+  text-align: left;
 }
 
 .hero-search .button {
-  border-radius: 7px;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 4px 12px rgba(71, 98, 255, 0.16);
-  clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 100%, 0 100%);
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(71, 98, 255, 0.18);
   font-size: 1rem;
   font-weight: 650;
-  grid-column: 9;
+  grid-column: 3;
   height: 58px;
   min-height: 58px;
-  padding-inline: 1.45rem;
+  padding-inline: 1.35rem;
   width: 100%;
 }
 
@@ -831,7 +740,7 @@
   background: url("../../assets/images/Rectangle 2304.png") center / 100% 100% no-repeat;
   border: 0;
   border-radius: 0;
-  clip-path: polygon(7% 0%, 100% 0%, 93% 100%, 0% 100%);
+  clip-path: none;
   aspect-ratio: 388 / 143;
   padding: 0.85rem 3rem 0.85rem 2.2rem;
   display: flex;
@@ -1404,14 +1313,6 @@
   background: linear-gradient(180deg, rgba(8, 12, 18, 0.03), rgba(18, 23, 31, 0.24) 58%, rgba(20, 26, 34, 0.36) 100%);
 }
 
-.featured-watermark {
-  position: absolute;
-  left: 1.45rem;
-  top: 1.25rem;
-  width: 7.4rem;
-  opacity: 0.2;
-  z-index: 1;
-}
 
 .featured-overlay {
   position: absolute;
@@ -1491,7 +1392,7 @@
   padding: 0 1.2rem;
 }
 
-.article-list a {
+.article-list article a {
   color: var(--color-primary);
   font-weight: 700;
   text-decoration: none;
@@ -1519,6 +1420,12 @@
   height: 154px;
   border-radius: 22px;
   object-fit: cover;
+}
+
+.article-list img[src*="braking-system"] {
+  border-radius: 0;
+  object-fit: contain;
+  object-position: center;
 }
 
 .blog-date {
@@ -1554,7 +1461,7 @@
   grid-area: title;
 }
 
-.article-list a {
+.article-list article a {
   grid-area: cta;
   justify-self: end;
   display: inline-flex;
@@ -1564,10 +1471,18 @@
   line-height: 1;
 }
 
-.article-list a::after {
+.article-list article a::after {
   content: "\2192";
   font-size: 1.16em;
   line-height: 1;
+}
+
+.blog-more-link {
+  align-self: start;
+  justify-self: end;
+  margin-top: 0.3rem;
+  min-height: 48px;
+  padding-inline: 1.25rem;
 }
 
 .app-section {
@@ -1837,7 +1752,11 @@
 
 .footer-mark {
   width: min(160px, 50%);
-  opacity: 0.18;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  image-rendering: auto;
+  opacity: 0.55;
   margin-left: 0.35rem;
 }
 
@@ -1921,27 +1840,22 @@
 
 @media (max-width: 1180px) {
   .hero-search-panel {
-    border-radius: 0 0 24px 0;
-    clip-path: none;
+    margin-left: clamp(-4.5rem, -4.8vw, -2.25rem);
+    padding-left: clamp(6.65rem, 9.25vw, 8.5rem);
     padding-right: clamp(1.25rem, 4vw, 2rem);
-    width: 100%;
+    width: calc(100% + clamp(2.25rem, 4.8vw, 4.5rem));
   }
 
   .hero-search {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    max-width: none;
   }
 
   .search-field--postal,
-  .search-field--plate,
-  .search-separator {
+  .search-field--plate {
     grid-column: auto;
   }
 
-  .search-separator {
-    display: none;
-  }
-
-  .vehicle-details,
   .hero-search .button {
     grid-column: 1 / -1;
   }
@@ -1992,9 +1906,6 @@
     border-radius: 26px;
   }
 
-  .featured-watermark {
-    width: 5.8rem;
-  }
 
   .featured-overlay {
     margin: 12.3rem 0.9rem 0.9rem;
@@ -2042,8 +1953,12 @@
     font-size: 1.35rem;
   }
 
-  .article-list a {
+  .article-list article a {
     font-size: 1.15rem;
+    justify-self: start;
+  }
+
+  .blog-more-link {
     justify-self: start;
   }
 
@@ -2187,11 +2102,6 @@
     border-radius: 20px;
   }
 
-  .featured-watermark {
-    width: 4.6rem;
-    left: 0.7rem;
-    top: 0.7rem;
-  }
 
   .featured-overlay {
     margin: 10.4rem 0.7rem 0.7rem;
@@ -2251,7 +2161,7 @@
     font-size: 1rem;
   }
 
-  .article-list a {
+  .article-list article a {
     font-size: 1rem;
   }
 
@@ -2370,8 +2280,10 @@
   }
 
   .hero-search-panel {
+    margin-left: 0;
     min-height: 0;
     padding: 1.55rem 1rem;
+    width: 100%;
   }
 
   .hero-search-panel h2 {
@@ -2381,14 +2293,14 @@
   .hero-search-panel > p {
     font-size: 0.95rem;
   }
-
-  .vehicle-detail-grid {
+  .hero-search {
     grid-template-columns: 1fr;
   }
 
-  .vehicle-detail-grid .search-field:not(:last-child) {
-    border-bottom: 1px solid #6f7eff;
-    border-right: 0;
+  .search-field--postal,
+  .search-field--plate,
+  .hero-search .button {
+    grid-column: 1;
   }
 
   .steps-section,

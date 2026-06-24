@@ -16,8 +16,9 @@
 .auth-message {
   margin: 0 0 1rem;
   padding: 0.75rem 0.9rem;
-  border-radius: var(--radius-md);
+  border-radius: 16px;
   font-weight: 600;
+  line-height: 1.45;
 }
 
 .auth-message[hidden] {
@@ -34,4 +35,128 @@
   border: 1px solid rgba(39, 174, 96, 0.26);
   background: rgba(39, 174, 96, 0.12);
   color: #176b3a;
+}
+
+.auth-real .auth-real__shell {
+  display: flex;
+}
+
+.auth-real .auth-real__brand-link {
+  color: inherit;
+}
+
+.auth-real .auth-real__home-link {
+  align-self: flex-start;
+  margin-bottom: 24px;
+  color: var(--auth-on-surface-variant);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.auth-real .auth-real__home-link:hover {
+  color: var(--auth-primary);
+}
+
+.auth-real .auth-prototype__form .auth-message {
+  margin: -4px 0 4px;
+}
+
+.auth-real .auth-real__role-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 24px;
+  padding: 16px;
+  border: 1px solid rgba(71, 98, 255, 0.2);
+  border-radius: 24px;
+  background: rgba(71, 98, 255, 0.08);
+}
+
+.auth-real .auth-real__role-note > .material-symbols-outlined {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 16px;
+  background: var(--auth-primary-container);
+  color: var(--auth-on-primary);
+}
+
+.auth-real .auth-real__role-note strong,
+.auth-real .auth-real__role-note small {
+  display: block;
+}
+
+.auth-real .auth-real__role-note strong {
+  color: var(--auth-on-surface);
+  font-family: var(--auth-font-body);
+  font-size: 16px;
+}
+
+.auth-real .auth-real__role-note small {
+  margin-top: 3px;
+  color: var(--auth-on-surface-variant);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.auth-real .auth-prototype__submit {
+  border: 0;
+}
+
+.auth-real .auth-prototype__switch-link {
+  margin-top: 24px;
+}
+
+@media (max-width: 767px) {
+  .auth-real .auth-real__shell {
+    width: 100%;
+    min-height: 100dvh;
+    margin: 0;
+    flex-direction: column;
+    border-radius: 0;
+  }
+
+  .auth-real .auth-prototype__desktop-visual,
+  .auth-real .auth-prototype__register-visual {
+    flex: 0 0 auto;
+    min-height: 300px;
+  }
+
+  .auth-real .auth-prototype__desktop-visual--login {
+    padding: 32px 24px;
+  }
+
+  .auth-real .auth-prototype__visual-copy h1,
+  .auth-real .auth-prototype__register-copy h2 {
+    font-size: 34px;
+  }
+
+  .auth-real .auth-prototype__benefit-list,
+  .auth-real .auth-prototype__benefit-blocks {
+    gap: 10px;
+  }
+
+  .auth-real .auth-prototype__form-panel--login,
+  .auth-real .auth-prototype__form-panel--register {
+    width: 100%;
+    padding: 32px 20px;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+  }
+
+  .auth-real .auth-prototype__form-container--login {
+    width: 100%;
+    max-width: none;
+  }
+
+  .auth-real .auth-prototype__form-header h1,
+  .auth-real .auth-prototype__form-header h2 {
+    font-size: 30px;
+  }
+
+  .auth-real .auth-prototype__grid-2 {
+    grid-template-columns: 1fr;
+  }
 }

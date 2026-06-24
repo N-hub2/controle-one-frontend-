@@ -1,30 +1,89 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Controle One</title>
-  <link rel="stylesheet" href="../styles/main.css">
+  <title>Connexion - Controle One</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700;900&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/pages/auth-prototype.css">
+  <link rel="stylesheet" href="../styles/pages/auth.css">
 </head>
-<body>
-  <main class="page page-login container">
-    <section class="auth-box card">
-      <h1>Login</h1>
-      <form id="login-form" novalidate>
-        <div class="form-field">
-          <label for="login-email">Email</label>
-          <input id="login-email" name="email" class="input-control" type="email" autocomplete="email" required>
+<body class="auth-prototype auth-prototype--login auth-real">
+  <main class="auth-prototype__desktop-shell auth-prototype__desktop-shell--login auth-real__shell" aria-label="Connexion Controle One">
+    <section class="auth-prototype__desktop-visual auth-prototype__desktop-visual--login" aria-label="Presentation Controle One">
+      <div class="auth-prototype__visual-gradient"></div>
+      <div class="auth-prototype__decor-circle auth-prototype__decor-circle--top"></div>
+      <div class="auth-prototype__decor-circle auth-prototype__decor-circle--bottom"></div>
+
+      <div class="auth-prototype__visual-content">
+        <a class="auth-prototype__brand-text auth-prototype__logo-brand auth-real__brand-link" href="../index.html" aria-label="Retour a l'accueil Controle One">
+          <img src="../assets/logos/Subtract (1) 6.png" alt="Logo Controle One">
+          <span>CONTROLE ONE</span>
+        </a>
+        <div class="auth-prototype__visual-copy">
+          <h1>R&eacute;servez votre contr&ocirc;le technique en toute simplicit&eacute;</h1>
+          <p>Trouvez un centre, comparez les prix et choisissez votre cr&eacute;neau en quelques clics.</p>
         </div>
-        <div class="form-field">
-          <label for="login-password">Password</label>
-          <input id="login-password" name="password" class="input-control" type="password" autocomplete="current-password" required>
-        </div>
-        <p class="auth-message" data-auth-message role="alert" hidden></p>
-        <button type="submit" class="button primary-button">Login</button>
-      </form>
-      <p>No account? <a href="register.html">Register</a></p>
+
+        <ul class="auth-prototype__benefit-list" aria-label="Avantages Controle One">
+          <li>
+            <span class="material-symbols-outlined auth-prototype__icon-fill" aria-hidden="true">check_circle</span>
+            <span>Centres certifi&eacute;s</span>
+          </li>
+          <li>
+            <span class="material-symbols-outlined auth-prototype__icon-fill" aria-hidden="true">check_circle</span>
+            <span>Prix transparents</span>
+          </li>
+          <li>
+            <span class="material-symbols-outlined auth-prototype__icon-fill" aria-hidden="true">check_circle</span>
+            <span>R&eacute;servation rapide</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="auth-prototype__form-panel auth-prototype__form-panel--login" aria-label="Formulaire de connexion">
+      <div class="auth-prototype__form-container auth-prototype__form-container--login">
+        <a class="auth-real__home-link" href="../index.html">Retour &agrave; l'accueil</a>
+
+        <header class="auth-prototype__form-header">
+          <h2>Bon retour sur Controle One</h2>
+          <p>Connectez-vous pour g&eacute;rer vos rendez-vous ou r&eacute;server un cr&eacute;neau.</p>
+        </header>
+
+        <form id="login-form" class="auth-prototype__form" action="#" method="post" autocomplete="off" novalidate>
+          <div class="auth-prototype__field">
+            <label for="login-email">Email</label>
+            <div class="auth-prototype__input-wrap auth-prototype__input-wrap--large">
+              <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+              <input id="login-email" name="email" type="email" placeholder="nom@exemple.fr" autocomplete="off" required>
+            </div>
+          </div>
+
+          <div class="auth-prototype__field">
+            <label for="login-password">Mot de passe</label>
+            <div class="auth-prototype__input-wrap auth-prototype__input-wrap--large">
+              <span class="material-symbols-outlined" aria-hidden="true">lock</span>
+              <input id="login-password" name="password" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" autocomplete="new-password" required>
+            </div>
+          </div>
+
+          <p class="auth-message" data-auth-message role="alert" hidden></p>
+
+          <button class="auth-prototype__submit" type="submit">Se connecter</button>
+        </form>
+
+        <p class="auth-prototype__switch-link">
+          Pas encore de compte ?
+          <a href="register.html">Cr&eacute;er un compte</a>
+        </p>
+      </div>
     </section>
   </main>
+
   <script type="module" src="../scripts/auth.js"></script>
 </body>
 </html>
